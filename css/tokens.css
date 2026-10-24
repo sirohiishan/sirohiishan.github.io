@@ -90,8 +90,6 @@
   --xp-mobile-inset: var(--pin-top);
   --xp-mobile-gap: var(--s-7);
   --work-sticky-clearance: calc(var(--pin-top) + var(--fs-h2) * var(--lh-heading) + var(--s-7));
-  --work-tab-count: 3;
-  --work-tab-mobile-height: var(--s-8);
   --r-xs: 4px;
   --r-sm: 10px;
   --r-md: 18px;

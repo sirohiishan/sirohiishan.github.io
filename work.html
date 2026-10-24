@@ -69,18 +69,11 @@
           <h1 class="page-head__title">All Work</h1>
           <p class="lead">Every project so far, from client work to college experiments.</p>
         </div>
-        <div class="wfilter" role="group" aria-label="Show projects" data-wfilter hidden>
-          <span class="wfilter__ind" aria-hidden="true"></span>
-          <button type="button" aria-pressed="true" data-f="all"><span class="wfilter__label">All</span><small></small></button>
-          <button type="button" aria-pressed="false" data-f="client"><span class="wfilter__label">Client work</span><small></small></button>
-          <button type="button" aria-pressed="false" data-f="personal"><span class="wfilter__label">Personal &amp; learning</span><small></small></button>
-        </div>
-        <p class="sr-only" aria-live="polite" data-wfilter-live></p>
       </div>
     </section>
     <section class="section section--flush-top">
-      <div class="wrap wlist" data-wlist>
-        <a class="wcard wcard--attendance reveal" data-kind="client" href="case-attendance.html">
+      <div class="wrap wlist">
+        <a class="wcard wcard--attendance reveal" href="case-attendance.html">
           <div class="wcard__text">
             <p class="wcard__client"><span>Client <span class="redact" style="--w:4.4em"></span> under NDA</span><span>Mobile app</span><span>3 days</span></p>
             <h3 class="wcard__title">Punch in, <span class="serif">punch out.</span></h3>
@@ -95,7 +88,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--neighbourhood reveal" data-kind="client" href="case-neighbourhood.html">
+        <a class="wcard wcard--neighbourhood reveal" href="case-neighbourhood.html">
           <div class="wcard__text">
             <p class="wcard__client"><span>Client <span class="redact" style="--w:4.4em"></span> under NDA</span><span>App and website</span><span>6 weeks</span></p>
             <h3 class="wcard__title">Everything nearby, <span class="serif">one tap away.</span></h3>
@@ -110,7 +103,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--thero reveal" data-kind="personal" href="case-thero.html">
+        <a class="wcard wcard--thero reveal" href="case-thero.html">
           <div class="wcard__text">
             <p class="wcard__client"><span><img class="wcard__icon" src="assets/img/thero/logo-final.svg" alt="">Thero</span><span>Personal project</span><span>iOS app</span></p>
             <h3 class="wcard__title">One list, <span class="serif">one clear order.</span></h3>
@@ -125,7 +118,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--rider reveal" data-kind="personal" href="case-rider.html">
+        <a class="wcard wcard--rider reveal" href="case-rider.html">
           <div class="wcard__text">
             <p class="wcard__client"><span>Personal concept</span><span>Mobile app</span><span>Jan 2026</span></p>
             <h3 class="wcard__title">Designing trust <span class="serif">after the ride.</span></h3>
@@ -140,7 +133,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--medicine reveal" data-kind="personal" href="case-medicine.html">
+        <a class="wcard wcard--medicine reveal" href="case-medicine.html">
           <div class="wcard__text">
             <p class="wcard__client"><span>IIT Delhi capstone</span><span>Mobile app</span><span>1 month</span></p>
             <h3 class="wcard__title">Reminders, <span class="serif">prefilled.</span></h3>
@@ -155,7 +148,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--cyberchic wcard--site reveal" data-kind="personal" href="https://www.behance.net/gallery/215068059/Cyberchic-UI" target="_blank" rel="noopener">
+        <a class="wcard wcard--cyberchic wcard--site reveal" href="https://www.behance.net/gallery/215068059/Cyberchic-UI" target="_blank" rel="noopener">
           <div class="wcard__text">
             <p class="wcard__client"><span>Cyberchic</span><span>College project</span><span>Website</span></p>
             <h3 class="wcard__title">Techwear, <span class="serif">after dark.</span></h3>
@@ -169,7 +162,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--brightwave wcard--site reveal" data-kind="personal" href="https://www.behance.net/gallery/205503337/BrightWave-Digital-Website-Design" target="_blank" rel="noopener">
+        <a class="wcard wcard--brightwave wcard--site reveal" href="https://www.behance.net/gallery/205503337/BrightWave-Digital-Website-Design" target="_blank" rel="noopener">
           <div class="wcard__text">
             <p class="wcard__client"><span>Brightwave</span><span>College project</span><span>Website</span></p>
             <h3 class="wcard__title">An agency, <span class="serif">on one page.</span></h3>
@@ -218,59 +211,5 @@
   <script src="js/screens-local.js"></script>
   <script src="js/screens-rider.js"></script>
   <script src="js/screens-medicine.js"></script>
-  <script>(function() {
-    const bar = document.querySelector("[data-wfilter]");
-    const live = document.querySelector("[data-wfilter-live]");
-    const cards = [ ...document.querySelectorAll("[data-wlist] .wcard") ];
-    const btns = [ ...bar.querySelectorAll("button") ];
-    bar.style.setProperty("--work-tab-count", btns.length);
-    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const match = (c, f) => f === "all" || c.dataset.kind === f;
-    btns.forEach(b => {
-        b.querySelector("small").textContent = cards.filter(c => match(c, b.dataset.f)).length;
-    });
-    const apply = (f, byUser) => {
-        const legacy = f === "learning";
-        if (legacy) f = "personal";
-        if (!btns.some(b => b.dataset.f === f)) f = "all";
-        btns.forEach((b, k) => {
-            b.setAttribute("aria-pressed", b.dataset.f === f);
-            if (b.dataset.f === f) {
-                bar.style.setProperty("--k", k);
-            }
-        });
-        let n = 0;
-        cards.forEach(c => {
-            const on = match(c, f);
-            c.hidden = !on;
-            if (on && byUser) {
-                c.classList.add("is-in");
-                if (!still) c.animate([ {
-                    opacity: 0,
-                    transform: "translateY(16px)"
-                }, {
-                    opacity: 1,
-                    transform: "none"
-                } ], {
-                    duration: 420,
-                    delay: n * 70,
-                    easing: "cubic-bezier(.2,.8,.2,1)",
-                    fill: "backwards"
-                });
-            }
-            if (on) n++;
-        });
-        live.textContent = n === 1 ? "Showing 1 project" : "Showing " + n + " projects";
-        if (byUser || legacy) history.replaceState(null, "", f === "all" ? location.pathname + location.search : "#" + f);
-    };
-    bar.hidden = false;
-    requestAnimationFrame(() => bar.classList.add("is-ready"));
-    bar.addEventListener("click", e => {
-        const b = e.target.closest("button");
-        if (b) apply(b.dataset.f, true);
-    });
-    addEventListener("hashchange", () => apply(location.hash.slice(1) || "all", false));
-    apply(location.hash.slice(1) || "all", false);
-})();</script>
 </body>
 </html>
