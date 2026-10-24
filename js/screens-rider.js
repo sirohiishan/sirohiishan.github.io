@@ -1,0 +1,22 @@
+(function() {
+    const ms = (n, cls) => '<span class="ms' + (cls ? " " + cls : "") + '" aria-hidden="true">' + n + "</span>";
+    const status = '<div class="phone__status"><span>9:41</span><span class="phone__notch"></span><span>' + ms("signal_cellular_alt") + ms("battery_full") + "</span></div>";
+    const map = '<svg class="rd-map" viewBox="0 0 244 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + '<rect width="244" height="520" fill="#E9EAEC"/>' + '<path d="M150 0 C 170 90, 230 120, 244 170 V 0 Z" fill="#DCE7D6"/>' + '<path d="M0 300 C 40 290, 70 330, 60 380 C 50 420, 0 430, 0 430 Z" fill="#D5E1EC"/>' + '<g fill="none" stroke="#FFFFFF" stroke-linecap="round">' + '<path d="M70 -10 V 530" stroke-width="16"/>' + '<path d="M-10 210 C 60 200, 140 230, 260 190" stroke-width="10"/>' + '<path d="M120 -10 C 130 120, 200 200, 210 530" stroke-width="7"/>' + '<path d="M-10 90 H 260" stroke-width="5"/><path d="M-10 470 C 80 460, 160 480, 260 440" stroke-width="5"/>' + '<path d="M160 260 H 260" stroke-width="4"/><path d="M20 140 V 520" stroke-width="3"/>' + "</g>" + '<path d="M70 128 V 209.6 C 94.5 210.9, 120.9 212.4, 150 210.9" fill="none" stroke="#1B1C1F" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round" stroke-linejoin="round"/>' + '<circle cx="70" cy="128" r="5.5" fill="#FFFFFF" stroke="#1B1C1F" stroke-width="3"/>' + '<circle cx="150" cy="210.9" r="7" fill="#1B1C1F"/><circle cx="150" cy="210.9" r="2.6" fill="#FFFFFF"/>' + '<g class="rd-map__t"><text x="74" y="60" transform="rotate(90 74 60)">Lake Road</text><text x="176" y="186" transform="rotate(-14 176 186)">Market Street</text><text x="176" y="112">Green Park</text><text x="8" y="355">Old Pond</text></g>' + "</svg>";
+    const search = '<div class="rd-search">' + ms("search") + "Where to next?</div>";
+    const base = (sheet, tall) => status + '<div class="rd">' + map + search + '<div class="rd-sheet' + (tall ? " rd-sheet--tall" : "") + '">' + sheet + "</div></div>";
+    const stars = n => '<div class="rd-stars">' + [ 1, 2, 3, 4, 5 ].map(i => '<span data-k="s' + i + '" class="' + (i <= n ? "on" : "") + '">' + ms("star", i <= n ? "fill" : "") + "</span>").join("") + "</div>";
+    const done = (title, sub) => '<div class="rd-done"><span class="rd-done__i">' + ms("check") + "</span><strong>" + title + "</strong>" + (sub ? "<p>" + sub + "</p>" : "") + "</div>";
+    const reasons = [ "Driving quality", "Vehicle condition", "Route or speed", "Driver behaviour", "App or navigation issue", "Other" ];
+    window.RiderScreens = {
+        rate: n => base('<div class="rd-trip"><span>Ride completed<b>12.8 km · 22 mins</b></span><span class="r">Total<b>₹108</b></span></div>' + '<div class="rd-who"><span class="rd-av">' + ms("person", "fill") + "</span><strong>How was your ride?</strong><small>Ravi · Bike taxi</small></div>" + stars(n || 0) + '<div class="rd-btn' + (n ? "" : " rd-btn--off") + '" data-k="submit">Submit rating</div><div class="rd-link" data-k="skip">Skip</div>'),
+        avoid: () => base('<div class="rd-q"><strong>Avoid this driver in the future?</strong><p>We won\'t match you with this driver again. You can change this anytime in Settings.</p></div>' + '<div class="rd-btn" data-k="avoid">Avoid future matches</div><div class="rd-link">Not now</div>'),
+        avoided: () => base(done("Got it", "We'll keep this in mind for your next rides.")),
+        reasons: sel => base('<div class="rd-q"><strong>What could have been better?</strong><p>Your feedback helps improve future rides. You can skip if you prefer.</p></div>' + '<small class="rd-label">Choose one or more reasons</small>' + '<div class="rd-opts">' + reasons.map((r, i) => '<span data-k="r' + (i + 1) + '" class="' + (sel === i + 1 ? "on" : "") + '">' + r + (sel === i + 1 ? ms("check") : "") + "</span>").join("") + "</div>" + '<div class="rd-btn' + (sel ? "" : " rd-btn--off") + '" data-k="submit">Submit feedback</div><div class="rd-link">Skip</div>', true),
+        thanks: () => base(done("Thanks for your feedback")),
+        map: () => status + '<div class="rd">' + map + search + '<div class="rd-where">' + ms("home") + "<span><b>Home</b><small>Saved place</small></span></div></div>"
+    };
+    document.querySelectorAll("[data-rider]").forEach(el => {
+        const f = window.RiderScreens[el.dataset.rider];
+        if (f) el.innerHTML = '<div class="phone__screen">' + f(el.dataset.a ? +el.dataset.a : undefined) + "</div>";
+    });
+})();

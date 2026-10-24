@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Geotagged Attendance | Ishan Sirohi</title>
+  <meta name="description" content="A three-day design change adding punch in, punch out and geotagged attendance to a live field audit app. A case study with recreated screens.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data:; media-src &#x27;self&#x27;; font-src &#x27;self&#x27;; connect-src &#x27;none&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests">
+  <link rel="canonical" href="https://sirohiishan.github.io/case-attendance.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ishan Sirohi">
+  <meta property="og:title" content="Geotagged Attendance | Ishan Sirohi">
+  <meta property="og:description" content="A three-day design change adding punch in, punch out and geotagged attendance to a live field audit app. A case study with recreated screens.">
+  <meta property="og:url" content="https://sirohiishan.github.io/case-attendance.html">
+  <meta property="og:image" content="https://sirohiishan.github.io/assets/share/attendance.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Attendance by Ishan Sirohi, shown as actual desktop and mobile website screenshots inside browser and phone frames.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Geotagged Attendance | Ishan Sirohi">
+  <meta name="twitter:description" content="A three-day design change adding punch in, punch out and geotagged attendance to a live field audit app. A case study with recreated screens.">
+  <meta name="twitter:image" content="https://sirohiishan.github.io/assets/share/attendance.jpg">
+  <meta name="twitter:image:alt" content="Attendance by Ishan Sirohi, shown as actual desktop and mobile website screenshots inside browser and phone frames.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <nav aria-label="Main">
+        <ul class="nav__links">
+          <li><a href="index.html"><span class="ms" aria-hidden="true">home</span><span class="nav__t">Home</span></a></li>
+          <li><a href="work.html" aria-current="page"><span class="ms" aria-hidden="true">work</span><span class="nav__t">Work</span></a></li>
+          <li><a href="about.html"><span class="ms" aria-hidden="true">person</span><span class="nav__t">About</span></a></li>
+          <li><a href="playground.html"><span class="ms" aria-hidden="true">interests</span><span class="nav__t">Playground</span></a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <a class="nav__resume" href="mailto:sirohi.ishan@icloud.com?subject=Resume%20request"><span class="ms nav__resume-i" aria-hidden="true">description</span><span class="nav__t">Resume</span><span class="ms nav__resume-a" aria-hidden="true">arrow_outward</span></a>
+        <button class="icon-btn nav__menu" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span class="ms" aria-hidden="true">menu</span></button>
+      </div>
+    </div>
+    <div class="mnav" id="mnav" hidden>
+      <div class="wrap mnav__in">
+        <a class="mnav__link" href="index.html">Home</a>
+        <a class="mnav__link" href="work.html" aria-current="page">Work</a>
+        <a class="mnav__link" href="about.html">About</a>
+        <a class="mnav__link" href="playground.html">Playground</a>
+        <div class="mnav__actions">
+          <a class="btn btn--primary" href="mailto:sirohi.ishan@icloud.com?subject=Resume%20request"><span class="ms" aria-hidden="true">description</span>Resume</a>
+          <a class="btn btn--ghost" href="mailto:sirohi.ishan@icloud.com">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    
+    <section class="cover" data-case-video="assets/video/attendance-case.mp4" data-case-poster="assets/video/attendance-case-poster.jpg" data-case-caption="Watch the project in 40 seconds">
+      <div class="wrap cover__in">
+        <div class="cover__text">
+          <a class="cover__back" href="work.html"><span class="ms" aria-hidden="true">arrow_back</span>All Work</a>
+          <div class="cover__main">
+            <h1 class="cover__title">Punch in, <span class="serif">punch out.</span></h1>
+            <p class="cover__lede">A change request I owned: geotagged attendance for a live field audit app.</p>
+          </div>
+          <dl class="cover__meta">
+            <div class="cover__client"><dt><span class="ms" aria-hidden="true">apartment</span>Client</dt><dd><span class="redact" style="--w:5.2em"></span><small>Under NDA</small></dd></div>
+            <div><dt><span class="ms" aria-hidden="true">person</span>Role</dt><dd>Product designer</dd></div>
+            <div><dt><span class="ms" aria-hidden="true">schedule</span>Timeline</dt><dd>3 days</dd></div>
+            <div><dt><span class="ms" aria-hidden="true">smartphone</span>Platform</dt><dd>iOS and Android</dd></div>
+            <div><dt><span class="ms" aria-hidden="true">flag</span>Status</dt><dd><i class="cover__dot" aria-hidden="true"></i>Handed off</dd></div>
+          </dl>
+        </div>
+          <div class="cover__phones" aria-hidden="true">
+          <div class="phone" data-screen="punch-in"></div>
+          <div class="phone" data-screen="working"></div>
+          <div class="phone" data-screen="geotag"></div>
+        </div>
+        </div>
+    </section>
+
+    <div class="wrap case-layout">
+      <nav class="toc" aria-label="Case study sections">
+        <div class="toc__in">
+          <a href="#overview">Overview</a><a href="#context">Who Uses the App</a><a href="#problem">The Problem</a><a href="#constraints">Constraints</a><a class="toc__parent" href="#solution">The Solution</a><div class="toc__kids"><div><a class="toc__kid" href="#flow">New Flow and Edge Cases</a><a class="toc__kid" href="#punch-in">Punching In</a><a class="toc__kid" href="#on-site">During the Audit</a><a class="toc__kid" href="#punch-out">Punching Out</a><a class="toc__kid" href="#explored">Verification and History</a></div></div><a href="#decisions">Key Decisions</a><a href="#outcome">The Outcome</a>
+        </div>
+        <div class="toc__progress" id="progress"></div>
+      </nav>
+
+      <div class="case-main">
+        <section class="case-overview" id="overview" aria-labelledby="overview-t">
+          <h2 class="h2" id="overview-t">Overview</h2>
+          <p class="case-summary">This was a change request to a live audit app. Reviewers couldn't tell when field auditors arrived, how long they stayed, or if they were on site at all. In three days, I designed geotagged punch in and punch out that wraps around the existing audit flow instead of rebuilding it. Auditors are never blocked, and anything unusual is flagged for review.</p>
+          <p class="case-nda"><span class="ms" aria-hidden="true">lock</span><span><strong>Under NDA.</strong> The client is scribbled out like this&nbsp;<span class="redact" style="--w:3em"></span>, and the screens are wireframes I rebuilt with fictional data, not the shipped design. The thinking, flows and decisions are real.</span></p>
+        </section>
+
+
+    
+    <section class="story" id="context">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">Who Uses the App</h2>
+          <p>A facility that wants to be certified gets an in-person visit from a field auditor. Over one or more days, the auditor checks its machinery, processes and everything else the certification requires, and fills in the findings on a mobile app. A reviewing officer then goes through those findings and decides whether the facility gets certified. This change request was for the field auditor's app.</p>
+        </div>
+        <div class="story__media reveal">
+<div class="flowcards">
+            <div class="flowcard">
+              <div class="flowmap__title flowmap__title--edge"><strong>How an audit runs</strong></div>
+              <div class="flow__lane">
+                <div class="node" style="--n:0"><span class="ms" aria-hidden="true">apartment</span><strong>Facility applies</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:1"><span class="ms" aria-hidden="true">badge</span><strong>Field auditor visits</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:2"><span class="ms" aria-hidden="true">smartphone</span><strong>Findings go in the app</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:3"><span class="ms" aria-hidden="true">gavel</span><strong>Officer decides</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="problem">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">The Problem</h2>
+          <p>Field auditors are paid for their visits, so the client needed to know how long each one actually worked on site. The app tracked the audit, but not the auditor. Location was asked once and never used as evidence. They wanted a simple attendance system, where auditors punch in when they arrive and punch out when they leave.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="tiles tiles--2">
+            <div class="tile">
+              <span class="tile__icon"><span class="ms" aria-hidden="true">visibility_off</span></span>
+              <strong>What reviewers couldn't see</strong>
+              <ul class="tile__list tile__list--bullets">
+                <li>When auditors arrived</li>
+                <li>How long they stayed</li>
+                <li>Whether they were on site at all</li>
+              </ul>
+            </div>
+            <div class="tile">
+              <span class="tile__icon"><span class="ms" aria-hidden="true">forum</span></span>
+              <strong>What was asked</strong>
+              <ul class="tile__list tile__list--bullets">
+                <li><span class="asked-q">Add punch in and punch out, so we know how long auditors work on site.</span></li>
+                <li><span class="asked-q">And a periodic check that auditors are still there.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="audit" data-title="The old flow" data-state="before" data-note="Before this change" aria-label="Walkthrough of the old flow, before attendance">
+            <script type="application/json">{"scenes":[
+              {"s":"list","t":"Start unlocks on the day","d":"The audit card shows Start audit only on its date. Nothing else is checked.","tap":"text:Start audit"},
+              {"s":"location","a":"We need your location for geotagging.","sys":true,"fx":"fade","t":"Location, asked once","d":"A system prompt asks for location. Nothing in the audit used it as evidence.","tap":"text:Allow while using app"},
+              {"s":"audit-old","t":"Fill sections, then submit","d":"Once every section is complete, the audit is submitted and synced.","tap":".wf-sticky .wf-btn","ms":3800},
+              {"s":"audit-old","keep":true,"dim":true,"t":"What reviewers never saw","d":"When the auditor arrived, how long they stayed, and whether they were on site at all.","ms":4600}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="constraints">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">Constraints</h2>
+          <p>The request came in mid-project, on a flow auditors were already using.</p>
+        </div>
+        <div class="story__media reveal">
+          <ul class="tiles tiles--3">
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">timer</span></span><strong>3 days</strong><p>A hard deadline, so reuse wherever possible.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">do_not_disturb_on</span></span><strong>A live flow</strong><p>Sections, saving and submit already worked. Wrap them, don't rewire them.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">alt_route</span></span><strong>Messy edge cases</strong><p>Denied permissions, wrong places, forgotten punch outs and multi-day visits.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--part" id="solution">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">The Solution</h2>
+          <p>How attendance fits into the audit, each new moment in the order the auditor meets it, through to verification and history.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="flow">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">01</span>New Flow and Edge Cases</h3>
+          <p>Attendance wraps around the audit. The sections in the middle don't change, and when a visit doesn't go to plan, the auditor is never blocked.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="vs">
+            <div class="vs__col vs__col--before">
+              <div class="flowmap__title flowmap__title--before"><strong>Before</strong><span>No proof of presence</span></div>
+              <ol class="steps">
+                <li class="step"><span class="ms" aria-hidden="true">assignment_turned_in</span><span>Accept the audit</span></li>
+                <li class="step"><span class="ms" aria-hidden="true">event</span><span>Start unlocks on the date</span></li>
+                <li class="step step--sys"><span class="ms" aria-hidden="true">location_on</span><span>Grant location, never used</span></li>
+                <li class="step"><span class="ms" aria-hidden="true">checklist</span><span>Fill sections</span></li>
+                <li class="step"><span class="ms" aria-hidden="true">cloud_upload</span><span>Submit and sync</span></li>
+              </ol>
+            </div>
+            <div class="vs__col vs__col--after">
+              <div class="flowmap__title"><strong>After</strong><span>New steps highlighted</span></div>
+              <ol class="steps">
+                <li class="step"><span class="ms" aria-hidden="true">assignment_turned_in</span><span>Accept the audit</span></li>
+                <li class="step"><span class="ms" aria-hidden="true">event</span><span>Start unlocks on the date</span></li>
+                <li class="step step--sys"><span class="ms" aria-hidden="true">location_on</span><span>Grant location, first time only</span></li>
+                <li class="step step--new"><span class="ms" aria-hidden="true">login</span><span>Punch in with a geotagged selfie</span></li>
+                <li class="step step--new"><span class="ms" aria-hidden="true">timer</span><span>Fill sections, time on site shown</span></li>
+                <li class="step step--new"><span class="ms" aria-hidden="true">logout</span><span>Punch out with a geotagged selfie</span></li>
+                <li class="step"><span class="ms" aria-hidden="true">cloud_upload</span><span>Submit once punched out</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="audit" data-title="Edge cases" data-note="When a visit doesn't go to plan" aria-label="Walkthrough of edge cases: leaving mid-session, coming back, forgetting to punch out, and being at the wrong place">
+            <script type="application/json">{"scenes":[
+              {"s":"active","t":"Leaves without punching out","d":"The session stays open. Continue audit takes them straight back in.","tap":"text:Continue audit","ms":7000},
+              {"s":"ready","t":"Needs to come back later","d":"After punching out, punch in is right there again. There's no limit on sessions.","tap":".wf-btn--out","ms":7000},
+              {"s":"auto-out","t":"Forgets to punch out","d":"The app punches them out automatically at the end of the day.","ms":7000},
+              {"s":"working","tick":1800,"t":"At the wrong place or no location","d":"Nothing is blocked. The session runs as normal, and only the reviewer sees a flag.","ms":7000}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="punch-in">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">02</span>Punching In Before the Audit Starts</h3>
+          <p>Start audit still unlocks by date. The first time, the app asks for location. Then the auditor punches in with a selfie, and sees the location and time stamped on it before it uploads.</p>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="audit" data-title="Punching in" data-note="New flow" aria-label="Walkthrough of punching in">
+            <script type="application/json">{"scenes":[
+              {"s":"list","t":"Start appears on the day","d":"Same audits list as before. Start audit still unlocks by date.","tap":"text:Start audit","ms":3000},
+              {"s":"location","sys":true,"fx":"fade","t":"Location, first time only","d":"Asked once, so every attendance photo can carry a geotag.","tap":"text:Allow while using app"},
+              {"s":"punch-in","t":"One clear first action","d":"The applicant header stays for orientation. The only thing to do is punch in.","tap":".wf-card .wf-btn"},
+              {"s":"camera","sys":true,"fx":"fade","t":"Take a selfie","d":"The phone's own camera, so it's familiar and asks for access only if needed.","tap":".wf-shutter","ms":3000},
+              {"s":"confirm","sys":true,"t":"Use photo or retake","d":"The standard confirm step. No custom UI to learn.","tap":"text:Use photo","ms":3000},
+              {"s":"geotag","t":"See what gets recorded","d":"Latitude, longitude, date and time are stamped on the photo before upload.","tap":"text:Upload","ms":3800},
+              {"s":"working","tick":60,"t":"Punched in","d":"The audit opens with time on site already counting.","ms":3800}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="on-site">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">03</span>During the Audit, the Clock Stays on Top</h3>
+          <p>The section screens didn't change. A slim duration bar shows time on site, and punch out stays pinned to the bottom. If the auditor leaves without punching out, the overview shows the active session and a way back in.</p>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="audit" data-title="During the audit" data-note="New flow" aria-label="Walkthrough of auditing with a session running">
+            <script type="application/json">{"scenes":[
+              {"s":"working","tick":5340,"t":"Audit as usual, time on site shown","d":"Section screens are untouched. A slim duration bar shows time on site.","tap":".app-bar .ms","ms":4200},
+              {"s":"active","t":"Left without punching out?","d":"The overview shows the active session with a way back in, and explains that punching out unlocks submit.","tap":"text:Continue audit","ms":4400},
+              {"s":"working","tick":5400,"t":"Back where they left off","d":"Punch out stays pinned to the bottom, one tap away whenever they're done.","ms":3800}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="punch-out">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">04</span>Punching Out, Then Submitting</h3>
+          <p>Punching out uses the same selfie flow. Submit unlocks only once the auditor has punched out and every required section is complete. If they forget to punch out, the system does it at the end of the day.</p>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="audit" data-title="Punching out and submitting" data-note="New flow" aria-label="Walkthrough of punching out and submitting">
+            <script type="application/json">{"scenes":[
+              {"s":"working","tick":9000,"t":"Done for now","d":"Punch out sits at the bottom of every section screen.","tap":".wf-sticky .wf-btn","ms":3200},
+              {"s":"camera","sys":true,"fx":"fade","t":"Same selfie, same rules","d":"Punching out uses the exact capture flow as punching in.","tap":".wf-shutter","ms":3000},
+              {"s":"geotag","a":"10 Oct 2026 · 13:02:40","t":"Geotagged again","d":"The out time and location are stamped and uploaded the same way.","tap":"text:Upload","ms":3400},
+              {"s":"incomplete","t":"Punched out, still incomplete","d":"Submit stays disabled and the card says exactly why, so nobody hunts for the problem.","ms":4400},
+              {"s":"ready","t":"Later, every section filled","d":"Punched out and complete, so submit unlocks. Punch in stays available for another session.","tap":"text:Submit audit & sync","ms":4400}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="explored">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">05</span>Verification and History</h3>
+          <p>The ask also wanted proof that auditors stayed on site. At set intervals, the app asks for a quick verification selfie, and a day by day history shows every punch in, verification and auto punch out. Both shipped.</p>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="audit" data-title="Verification and history" data-state="shipped" data-note="Shipped flow" aria-label="Walkthrough of the verification prompt and attendance history">
+            <script type="application/json">{"scenes":[
+              {"s":"working","tick":1740,"t":"Mid-session","d":"The auditor is working through sections, with time on site shown.","ms":2800},
+              {"s":"verify","fx":"fade","t":"Verification prompt","d":"At set intervals, a modal asks for a quick selfie. One action, no dismiss.","tap":"text:Take selfie","ms":4200},
+              {"s":"working","tick":3660,"t":"Tap the duration bar","d":"The duration bar opens the full attendance history.","tap":".wf-duration","ms":3200},
+              {"s":"history","t":"Attendance history","d":"Total time, then a day by day timeline of punch ins, verifications and auto punch outs.","ms":5200}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="decisions">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">Key Decisions</h2>
+          <p>Five small calls that kept a three day change safe to ship.</p>
+        </div>
+        <div class="story__media">
+<ol class="calls">
+            <li class="call reveal" style="--i:0"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">flag</span></span><span class="call__n">01</span></div><strong>Flag, don't block</strong><p>A weak GPS signal shouldn't fail an audit.</p></li>
+            <li class="call reveal" style="--i:1"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">layers</span></span><span class="call__n">02</span></div><strong>Wrap the audit, don't rebuild it</strong><p>Three days, on a flow auditors already knew.</p></li>
+            <li class="call reveal" style="--i:2"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">lock_open</span></span><span class="call__n">03</span></div><strong>Punch out unlocks submit</strong><p>Every audit ends with a closed attendance record.</p></li>
+            <li class="call reveal" style="--i:3"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">photo_camera</span></span><span class="call__n">04</span></div><strong>Use the native camera</strong><p>Familiar to auditors, faster to build.</p></li>
+            <li class="call reveal" style="--i:4"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">repeat</span></span><span class="call__n">05</span></div><strong>Sessions, not shifts</strong><p>Auditors leave, come back, and sometimes forget to punch out.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="outcome">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">The Outcome</h2>
+          <p>Every state and edge case was handed off within the three days. The project is ongoing, so no numbers yet. Here's what I'd track.</p>
+        </div>
+        <div class="story__media reveal">
+          <ul class="tiles tiles--3">
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">schedule</span></span><strong>Auto punch out rate</strong><p>If it's high, punch out needs to be easier to spot.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">flag</span></span><strong>Location flags</strong><p>How many are real issues, not GPS noise.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">timer</span></span><strong>Time to first section</strong><p>Punch in should add seconds, not minutes.</p></li>
+          </ul>
+          <p class="story__close">Short deadlines reward reuse. The real work was deciding what not to touch.</p>
+        </div>
+      </div>
+    </section>
+
+      </div>
+    </div>
+
+    <section class="more" aria-labelledby="more-t">
+      <div class="wrap">
+        <h2 class="h2" id="more-t">More Work</h2>
+        <div class="more__grid">
+          <a class="mcard wcard--neighbourhood" href="case-neighbourhood.html">
+            <div class="mcard__text">
+              <p class="wcard__client"><span>Client <span class="redact" style="--w:4.4em"></span> under NDA</span><span>App and website</span><span>6 weeks</span></p>
+              <h3 class="mcard__title">Everything nearby, <span class="serif">one tap away.</span></h3>
+              <p class="mcard__desc">Local offers, events and stores in one app, from the first component to handoff.</p>
+              <span class="mcard__cta">Read the case study<span class="ms" aria-hidden="true">arrow_forward</span></span>
+            </div>
+            <div class="mcard__peek" aria-hidden="true"><div class="phone phone--night" data-nb="home"></div></div>
+          </a>
+          <a class="mcard wcard--thero" href="case-thero.html">
+            <div class="mcard__text">
+              <p class="wcard__client"><span><img class="wcard__icon" src="assets/img/thero/logo-final.svg" alt="">Thero</span><span>Personal project</span><span>iOS app</span></p>
+              <h3 class="mcard__title">One list, <span class="serif">one clear order.</span></h3>
+              <p class="mcard__desc">My own to-do app, where every task gets its own priority. Designed, built and shipped.</p>
+              <span class="mcard__cta">Read the case study<span class="ms" aria-hidden="true">arrow_forward</span></span>
+            </div>
+            <div class="mcard__peek" aria-hidden="true"><div class="phone phone--shot"><img src="assets/img/thero/thero-home.jpg" alt="" loading="lazy"></div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer__in">
+        <p class="footer__cta">Liked the process? <span class="serif">Let's talk.</span></p>
+        <p class="footer__sub">Have a role in mind, or just want to say hello? My inbox is open.</p>
+        <div class="footer__actions">
+          <div class="fmailbox">
+            <a class="fmailbox__link" href="mailto:sirohi.ishan@icloud.com"><span class="ms" aria-hidden="true">mail</span>sirohi.ishan@icloud.com</a>
+            <button class="fmailbox__copy" type="button" data-copy="sirohi.ishan@icloud.com"><span class="ms" aria-hidden="true">content_copy</span>Copy</button>
+          </div>
+        </div>
+        <nav class="footer__links" aria-label="Elsewhere">
+          <a href="https://linkedin.com/in/ishansirohi" target="_blank" rel="noopener">LinkedIn<span class="ms" aria-hidden="true">arrow_outward</span></a>
+          <a href="https://www.behance.net/ishansirohi" target="_blank" rel="noopener">Behance<span class="ms" aria-hidden="true">arrow_outward</span></a>
+          <a href="https://www.instagram.com/sirohiishan/" target="_blank" rel="noopener">Instagram<span class="ms" aria-hidden="true">arrow_outward</span></a>
+        </nav>
+      </div>
+      <p class="footer__mark reveal" aria-hidden="true"><span style="--i:0">I</span><span style="--i:1">s</span><span style="--i:2">h</span><span style="--i:3">a</span><span style="--i:4">n</span><span style="--i:5">&nbsp;</span><span style="--i:6">S</span><span style="--i:7">i</span><span style="--i:8">r</span><span style="--i:9">o</span><span style="--i:10">h</span><span style="--i:11">i</span></p>
+      <div class="footer__base">
+        <span>© <span data-year>2026</span> Ishan Sirohi</span>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/screens-local.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/walkthrough.js"></script>
+  <script>(function() {
+    const links = [ ...document.querySelectorAll(".toc a") ];
+    const targets = links.map(a => document.querySelector(a.getAttribute("href")));
+    const bar = document.getElementById("progress");
+    let last = -2;
+    function onScroll() {
+        const h = document.documentElement;
+        bar.style.setProperty("--p", h.scrollTop / (h.scrollHeight - h.clientHeight));
+        let cur = -1;
+        targets.forEach((t, i) => {
+            const r = (t.querySelector("h2, h3") || t).getBoundingClientRect();
+            if (r.top < window.innerHeight * .35) cur = i;
+        });
+        links.forEach((a, i) => a.classList.toggle("is-on", i === cur));
+        const inSol = cur >= 0 && (links[cur].classList.contains("toc__parent") || links[cur].classList.contains("toc__kid"));
+        document.querySelector(".toc").classList.toggle("sol-open", inSol);
+        if (inSol) document.querySelector(".toc__parent").classList.add("is-on");
+        if (cur >= 0 && cur !== last) {
+            const a = links[cur];
+            a.parentElement.scrollTo({
+                left: a.offsetLeft - 16,
+                behavior: "smooth"
+            });
+        }
+        last = cur;
+    }
+    let raf;
+    window.addEventListener("scroll", () => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(onScroll);
+    }, {
+        passive: true
+    });
+    onScroll();
+})();</script>
+</body>
+</html>

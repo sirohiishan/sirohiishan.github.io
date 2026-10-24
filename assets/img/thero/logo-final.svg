@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Thero" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs><clipPath id="thero-sq"><rect width="100" height="100" rx="22.5"/></clipPath></defs>
+  <g clip-path="url(#thero-sq)">
+    <rect width="100" height="100" fill="#7998FF"/>
+    <path d="M69 0H100V56.9L29.4 90.1L26.4 82.6Z" fill="#FFFFFF"/>
+    <path d="M12.8 70.6L27.9 85.4" fill="none" stroke="#FFFFFF" stroke-width="9.4" stroke-linecap="round"/>
+  </g>
+</svg>

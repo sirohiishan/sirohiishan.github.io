@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Neighbourhood App Design | Ishan Sirohi</title>
+  <meta name="description" content="Designing local offers, events and stores in one neighbourhood app, from design system to developer handoff. Presented with recreated screens.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data:; media-src &#x27;self&#x27;; font-src &#x27;self&#x27;; connect-src &#x27;none&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests">
+  <link rel="canonical" href="https://sirohiishan.github.io/case-neighbourhood.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ishan Sirohi">
+  <meta property="og:title" content="Neighbourhood App Design | Ishan Sirohi">
+  <meta property="og:description" content="Designing local offers, events and stores in one neighbourhood app, from design system to developer handoff. Presented with recreated screens.">
+  <meta property="og:url" content="https://sirohiishan.github.io/case-neighbourhood.html">
+  <meta property="og:image" content="https://sirohiishan.github.io/assets/share/neighbourhood.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Neighbourhood app by Ishan Sirohi, shown as actual desktop and mobile website screenshots inside browser and phone frames.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Neighbourhood App Design | Ishan Sirohi">
+  <meta name="twitter:description" content="Designing local offers, events and stores in one neighbourhood app, from design system to developer handoff. Presented with recreated screens.">
+  <meta name="twitter:image" content="https://sirohiishan.github.io/assets/share/neighbourhood.jpg">
+  <meta name="twitter:image:alt" content="Neighbourhood app by Ishan Sirohi, shown as actual desktop and mobile website screenshots inside browser and phone frames.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <nav aria-label="Main">
+        <ul class="nav__links">
+          <li><a href="index.html"><span class="ms" aria-hidden="true">home</span><span class="nav__t">Home</span></a></li>
+          <li><a href="work.html" aria-current="page"><span class="ms" aria-hidden="true">work</span><span class="nav__t">Work</span></a></li>
+          <li><a href="about.html"><span class="ms" aria-hidden="true">person</span><span class="nav__t">About</span></a></li>
+          <li><a href="playground.html"><span class="ms" aria-hidden="true">interests</span><span class="nav__t">Playground</span></a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <a class="nav__resume" href="mailto:sirohi.ishan@icloud.com?subject=Resume%20request"><span class="ms nav__resume-i" aria-hidden="true">description</span><span class="nav__t">Resume</span><span class="ms nav__resume-a" aria-hidden="true">arrow_outward</span></a>
+        <button class="icon-btn nav__menu" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span class="ms" aria-hidden="true">menu</span></button>
+      </div>
+    </div>
+    <div class="mnav" id="mnav" hidden>
+      <div class="wrap mnav__in">
+        <a class="mnav__link" href="index.html">Home</a>
+        <a class="mnav__link" href="work.html" aria-current="page">Work</a>
+        <a class="mnav__link" href="about.html">About</a>
+        <a class="mnav__link" href="playground.html">Playground</a>
+        <div class="mnav__actions">
+          <a class="btn btn--primary" href="mailto:sirohi.ishan@icloud.com?subject=Resume%20request"><span class="ms" aria-hidden="true">description</span>Resume</a>
+          <a class="btn btn--ghost" href="mailto:sirohi.ishan@icloud.com">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    
+    <section class="cover" data-case-video="assets/video/neighbourhood-case.mp4" data-case-poster="assets/video/neighbourhood-case-poster.jpg" data-case-caption="Watch the project in 36 seconds">
+      <div class="wrap cover__in">
+        <div class="cover__text">
+          <a class="cover__back" href="work.html"><span class="ms" aria-hidden="true">arrow_back</span>All Work</a>
+          <div class="cover__main">
+            <h1 class="cover__title">Everything nearby, <span class="serif">one tap away.</span></h1>
+            <p class="cover__lede">A neighbourhood app for local offers, events and stores, from the first component to developer handoff.</p>
+          </div>
+          <dl class="cover__meta">
+            <div class="cover__client"><dt><span class="ms" aria-hidden="true">apartment</span>Client</dt><dd><span class="redact" style="--w:5.2em"></span><small>Under NDA</small></dd></div>
+            <div><dt><span class="ms" aria-hidden="true">person</span>Role</dt><dd>Product designer</dd></div>
+            <div><dt><span class="ms" aria-hidden="true">schedule</span>Timeline</dt><dd>About 6 weeks</dd></div>
+            <div><dt><span class="ms" aria-hidden="true">layers</span>Scope</dt><dd>System, app, website, email</dd></div>
+            <div><dt><span class="ms" aria-hidden="true">flag</span>Status</dt><dd><i class="cover__dot cover__dot--off" aria-hidden="true"></i>Handed off, not launched</dd></div>
+          </dl>
+        </div>
+        <div class="cover__phones" aria-hidden="true">
+          <div class="phone phone--night" data-nb="home"></div>
+          <div class="phone phone--night" data-nb="offer"></div>
+          <div class="phone phone--night" data-nb="event"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap case-layout">
+      <nav class="toc" aria-label="Case study sections">
+        <div class="toc__in">
+          <a href="#overview">Overview</a><a href="#context">Who It Was For</a><a href="#my-part">My Part</a><a href="#brief">The Brief</a><a href="#constraints">Constraints</a><a class="toc__parent" href="#solution">The Solution</a><div class="toc__kids"><div><a class="toc__kid" href="#flow">How People Use It</a><a class="toc__kid" href="#system">A System First</a><a class="toc__kid" href="#app">The App</a><a class="toc__kid" href="#redeem">Redeeming</a><a class="toc__kid" href="#surfaces">Website and Email</a></div></div><a href="#decisions">Key Decisions</a><a href="#outcome">The Outcome</a>
+        </div>
+        <div class="toc__progress" id="progress"></div>
+      </nav>
+
+      <div class="case-main">
+        <section class="case-overview" id="overview" aria-labelledby="overview-t">
+          <h2 class="h2" id="overview-t">Overview</h2>
+          <p class="case-summary">This was a new app for one neighbourhood: local offers, events and stores in one place, with a reason to open it every day. The first release had no payments, so people browse, save, walk in and redeem in person. I built the design system, shaped the flows with another designer, and finished the design with the developers. It was handed off but never launched.</p>
+          <p class="case-nda case-nda--loud"><span class="ms" aria-hidden="true">lock</span><span><strong>This is a recreation, not the real app.</strong> The project is under NDA, so I redrew every screen as a simplified sketch with fictional stores, people and content, and the client is scribbled out like this&nbsp;<span class="redact" style="--w:3em"></span>. The thinking, flows and decisions are real. Happy to talk through the real work.</span></p>
+        </section>
+
+    
+    <section class="story" id="context">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">Who It Was For</h2>
+          <p>People who live in one neighbourhood and get around it on foot: the regulars at its cafés, bakeries, salons and markets. To keep that person in view, here's one of them.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="persona-card">
+            <div class="persona-card__who">
+              <div class="persona-card__id">
+                <span class="persona-card__av" aria-hidden="true">R</span>
+                <div><strong class="persona-card__name">Riya, 29</strong><span class="persona-card__role">Lives and works in the neighbourhood, and walks to most places</span></div>
+              </div>
+              <p class="persona-card__quote">There's always a deal somewhere nearby. I just hear about it after it's over.</p>
+            </div>
+            <div class="persona-card__body">
+              <div class="persona-card__cols">
+                <div>
+                  <h3><span class="ms" aria-hidden="true">favorite</span>Wants</h3>
+                  <ul>
+                    <li>Deals at stores already on the daily route</li>
+                    <li>To know what's on this weekend, close to home</li>
+                    <li>One place to check, not ten group chats</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3><span class="ms" aria-hidden="true">block</span>Gets in the way</h3>
+                  <ul>
+                    <li>Offers scattered across social pages and chats</li>
+                    <li>Finding out about events too late</li>
+                    <li>Not sure a deal is still on before walking over</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="persona-note"><span class="ms" aria-hidden="true">info</span>An illustrative persona, built from the brief. Not a real person.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="my-part">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">My Part</h2>
+          <p>Two of us designed this. My teammate left mid-project, so I took it through final design and handoff.</p>
+        </div>
+        <div class="story__media reveal">
+          <ul class="tiles tiles--3 tiles--who">
+            <li class="tile"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">widgets</span></span><span class="tile__who">Me</span></div><strong>Design system</strong><p>Built from scratch: colour, type, icons and every component with its states. I also built most of the components used across the app.</p></li>
+            <li class="tile"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">forum</span></span><span class="tile__who">Both of us</span></div><strong>Flows and screens</strong><p>Lots of brainstorming and many versions of each screen, with a lot of back and forth with the client on visuals and UI.</p></li>
+            <li class="tile"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">integration_instructions</span></span><span class="tile__who">Me</span></div><strong>Final design and handoff</strong><p>I finished the design and worked with the developers so the app could be built.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="brief">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">The Brief</h2>
+          <p>The brief packed a lot into a first release. The client's reference boards were loud and heavy on colour, and one question kept coming back: how to stop the same offer being claimed again and again.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="tiles tiles--2">
+            <div class="tile">
+              <span class="tile__icon"><span class="ms" aria-hidden="true">checklist</span></span>
+              <strong>What was asked</strong>
+              <ul class="tile__list tile__list--bullets">
+                <li>Phone sign in and a daily home feed</li>
+                <li>Offer and store pages, events and alerts</li>
+                <li>A personal space for saved and redeemed things</li>
+              </ul>
+            </div>
+            <div class="tile">
+              <span class="tile__icon"><span class="ms" aria-hidden="true">forum</span></span>
+              <strong>The client's main worry</strong>
+              <ul class="tile__list tile__list--bullets">
+                <li><span class="asked-q">How do we stop one offer being claimed again and again?</span> (paraphrased)</li>
+                <li>Every offer was for a physical store, not online.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="constraints">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">Constraints</h2>
+          <p>A new product with a short runway, and a lot still undecided.</p>
+        </div>
+        <div class="story__media reveal">
+          <ul class="tiles tiles--3">
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">devices</span></span><strong>Three surfaces</strong><p>An app, a download website and email, all needing to feel like one product.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">help</span></span><strong>Partners still open</strong><p>Which stores would join wasn't decided, so nothing could depend on tools they'd run.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">signal_cellular_connected_no_internet_0_bar</span></span><strong>Used out and about</strong><p>Location off, no network, an old app version. Each needed a designed state.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--part" id="solution">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">The Solution</h2>
+          <p>How people move through the app, the system underneath it, the app itself, the redemption check, and the website and email around it.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="flow">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">01</span>How People Use It</h3>
+          <p>Two paths run through it. Offers end with a walk to the store and a redemption in person, since the first release had no payments. Events are there to browse and show interest in, with no tickets. Favourite stores can be saved, so people hear about their new offers.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="flowcards">
+            <div class="flowcard">
+              <div class="flow__lane-title"><span class="ms" aria-hidden="true">sell</span>Offers</div>
+              <div class="flow__lane">
+                <div class="node" style="--n:0"><span class="ms" aria-hidden="true">search</span><strong>Find an offer nearby</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:1"><span class="ms" aria-hidden="true">favorite</span><strong>Save it</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:2"><span class="ms" aria-hidden="true">directions_walk</span><strong>Walk to the store</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:3"><span class="ms" aria-hidden="true">where_to_vote</span><strong>Redeem in person</strong></div>
+              </div>
+              <div class="flow__lane-title"><span class="ms" aria-hidden="true">event</span>Events</div>
+              <div class="flow__lane">
+                <div class="node" style="--n:4"><span class="ms" aria-hidden="true">search</span><strong>Find an event nearby</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:5"><span class="ms" aria-hidden="true">star</span><strong>Mark interested</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:6"><span class="ms" aria-hidden="true">notifications</span><strong>Get a reminder</strong></div>
+                <div class="arrow"><span class="ms" aria-hidden="true">arrow_forward</span></div>
+                <div class="node" style="--n:7"><span class="ms" aria-hidden="true">groups</span><strong>Go along</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="system">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">02</span>A System First, Then Screens</h3>
+          <p>I started with the foundations so two designers could move fast without drifting apart: a dark base, one accent colour saved for actions, a seven step type scale, and components with every state drawn out. Shown here recoloured, with the real type scale and component states.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="ds-board" role="img" aria-label="Recreated design system: colours, type scale, buttons, small components and cards">
+              <div class="ds-block">
+                <h3>Colour <small>dark first</small></h3>
+                <div class="ds-swatches">
+                  <div class="ds-swatch"><i style="background:var(--nb-bg)"></i><b>Base</b>Screens</div>
+                  <div class="ds-swatch"><i style="background:var(--nb-surface)"></i><b>Surface</b>Cards</div>
+                  <div class="ds-swatch"><i style="background:var(--nb-acc)"></i><b>Accent</b>Actions only</div>
+                  <div class="ds-swatch"><i style="background:var(--nb-text)"></i><b>Text</b>Primary</div>
+                  <div class="ds-swatch"><i style="background:var(--nb-muted)"></i><b>Muted</b>Secondary</div>
+                  <div class="ds-swatch"><i style="background:var(--nb-ok)"></i><b>Success</b>Feedback</div>
+                </div>
+              </div>
+              <div class="ds-block ds-block--wide">
+                <h3>Type scale <small>size / line height</small></h3>
+                <div class="ds-type">
+                  <div><span style="font-size:32px;font-weight:700;line-height:1.1">Heading 1</span><small>32 / 40</small></div>
+                  <div><span style="font-size:24px;font-weight:700">Heading 2</span><small>24 / 32</small></div>
+                  <div><span style="font-size:20px;font-weight:700">Title 1</span><small>20 / 28</small></div>
+                  <div><span style="font-size:18px;font-weight:600">Title 2</span><small>18 / 24</small></div>
+                  <div><span style="font-size:16px">Body 1, for offer details</span><small>16 / 24</small></div>
+                  <div><span style="font-size:14px">Body 2, for supporting text</span><small>14 / 20</small></div>
+                  <div><span style="font-size:12px;letter-spacing:.04em">Caption, for tags</span><small>12 / 16</small></div>
+                </div>
+              </div>
+              <div class="ds-block ds-block--wide">
+                <h3>Buttons <small>every state drawn</small></h3>
+                <div class="ds-grid">
+                  <span></span><span>Default</span><span>Pressed</span><span>Disabled</span><span class="ds-hide-sm">Loading</span><span class="ds-hide-sm">Done</span>
+                  <span>Filled</span><div class="nb-btn">Redeem</div><div class="nb-btn nb-btn--press">Redeem</div><div class="nb-btn nb-btn--off">Redeem</div><div class="nb-btn ds-hide-sm"><i class="ds-spin"></i></div><div class="nb-btn ds-hide-sm"><span class="ms" aria-hidden="true">check</span></div>
+                  <span>Outline</span><div class="nb-btn nb-btn--out">Directions</div><div class="nb-btn nb-btn--out" style="background:rgba(255,255,255,.08)">Directions</div><div class="nb-btn nb-btn--out" style="opacity:.4">Directions</div><div class="nb-btn nb-btn--out ds-hide-sm"><i class="ds-spin"></i></div><div class="nb-btn nb-btn--out ds-hide-sm"><span class="ms" aria-hidden="true">check</span></div>
+                  <span>Text</span><div class="nb-btn nb-btn--text">See all</div><div class="nb-btn nb-btn--text" style="opacity:.75">See all</div><div class="nb-btn nb-btn--text" style="opacity:.35">See all</div><span class="ds-hide-sm"></span><span class="ds-hide-sm"></span>
+                </div>
+              </div>
+              <div class="ds-block">
+                <h3>Small parts</h3>
+                <div class="ds-parts">
+                  <span class="nb-tag nb-tag--acc">Buy 1 Get 1</span><span class="nb-tag">Food</span><span class="nb-tag nb-tag--dark">This week</span>
+                </div>
+                <div class="ds-parts">
+                  <span class="ds-toggle"></span><span class="ds-toggle on"></span>
+                  <span class="ms" aria-hidden="true" style="color:var(--nb-muted)">check_box_outline_blank</span><span class="ms fill" aria-hidden="true" style="color:var(--nb-acc)">check_box</span>
+                  <span class="ms" aria-hidden="true" style="color:var(--nb-muted)">favorite</span><span class="ms fill" aria-hidden="true" style="color:var(--nb-acc)">favorite</span>
+                </div>
+                <div class="nb-search ds-search"><span class="ms" aria-hidden="true">search</span><span>Search offers, events, stores</span></div>
+                <div class="nb-otp ds-otp"><i>4</i><i>8</i><i>1</i><i class="on"></i><i></i><i></i></div>
+              </div>
+              <div class="ds-block ds-block--full">
+                <h3>Cards <small>14 types, three shown</small></h3>
+                <div class="ds-cards">
+                  <div class="ds-card"><div class="nb-img" style="--h:28"><span class="ms" aria-hidden="true">bakery_dining</span></div><div class="ds-card__txt"><span class="nb-tag nb-tag--acc">Buy 1 Get 1</span><div class="nb-t">Buy one, get one on fresh loaves</div><div class="nb-s">Corner Bakery · 400 m · till 31 Oct</div></div></div>
+                  <div class="ds-card"><div class="nb-img" style="--h:262"><span class="ms" aria-hidden="true">mic_external_on</span></div><div class="ds-card__txt"><span class="nb-tag nb-tag--dark">Sat, 18 Oct</span><div class="nb-t">Open mic night</div><div class="nb-s">Green Bowl Cafe · 1.2 km · Free</div></div></div>
+                  <div class="ds-rows">
+                    <div class="nb-list"><div class="nb-img" style="--h:35"><span class="ms" aria-hidden="true">storefront</span></div><div class="nb-list__txt"><div class="nb-t">Corner Bakery</div><div class="nb-s">Food · 400 m</div></div></div>
+                    <div class="nb-list"><div class="nb-img" style="--h:330"><span class="ms" aria-hidden="true">content_cut</span></div><div class="nb-list__txt"><div class="nb-t">Studio Nine</div><div class="nb-s">Beauty · 800 m</div></div></div>
+                    <div class="nb-list"><div class="nb-img" style="--h:200"><span class="ms" aria-hidden="true">shopping_bag</span></div><div class="nb-list__txt"><div class="nb-t">Thread &amp; Co</div><div class="nb-s">Shopping · 1.1 km</div></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ds-stats">
+                <div><b>56</b>app screens in the final file</div>
+                <div><b>14</b>card types from one set of rules</div>
+                <div><b>1</b>system for app, website and email</div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="app">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">03</span>The App</h3>
+          <p>Three moments from the app itself, each shown as a short walkthrough: getting in, finding something nearby, and events with the screens for when things go wrong.</p>
+        </div>
+        <div class="story__media">
+          <div class="app-part" id="getting-in">
+            <div class="app-part__head reveal"><h3>Getting In, Fast</h3><p>Three short intro slides, then a phone number and a one-time code. The alerts opt-in sits on the sign in screen, email is optional, and the profile step can be skipped. Interest picking was designed early but left out of the final flow.</p></div>
+            <div class="reveal">
+  <figure class="walk" data-kit="nb" data-title="Getting in" data-note="Final design" aria-label="Walkthrough of signing in: intro, phone number, one-time code and profile">
+            <script type="application/json">{"scenes":[
+              {"s":"intro","t":"Three slides, then sign in","d":"A short intro on what the app is for, then straight to the point.","tap":"text:Next","ms":3600},
+              {"s":"login","t":"Phone number, nothing else","d":"The alerts opt-in sits right here, so it's one decision, not another screen.","ms":4000},
+              {"s":"otp","t":"One-time code","d":"A resend timer, and a way to fix a mistyped number without starting over.","ms":3600},
+              {"s":"profile","t":"A name, and you're in","d":"Email is optional, and the whole step can be skipped.","tap":"text:Continue","ms":3800},
+              {"s":"home","t":"Straight to the feed","d":"No more questions before people see what's nearby.","ms":3400}
+            ]}</script>
+          </figure>
+            </div>
+          </div>
+          <div class="app-part" id="finding">
+            <div class="app-part__head reveal"><h3>Finding Something Nearby</h3><p>Home answers "what's good today?" with a featured offer, categories and what's trending. One search covers offers, stores and events, and every store has its own page with its offers, events and videos.</p></div>
+            <div class="reveal">
+  <figure class="walk" data-kit="nb" data-title="Finding something" data-note="Final design" aria-label="Walkthrough of finding an offer: home, search, store page and offer">
+            <script type="application/json">{"scenes":[
+              {"s":"home","t":"Home answers what's good today","d":"A featured offer carousel, categories and what's trending. Search is always at the top.","tap":".nb-search","ms":4000},
+              {"s":"search","t":"One search, three kinds of result","d":"Offers, stores and events in one list, each tagged, with category filters.","tap":"text:Corner Bakery","ms":4000},
+              {"s":"store","t":"Every store has a home","d":"Address, distance and hours first, then tabs for its offers, events and videos.","tap":"text:Buy one, get one on fresh loaves","ms":4000},
+              {"s":"offer","t":"The offer, in one glance","d":"Valid till, how far, how many redeemed. Terms are tucked away until needed.","ms":4000}
+            ]}</script>
+          </figure>
+            </div>
+          </div>
+          <div class="app-part" id="events">
+            <div class="app-part__head reveal"><h3>Events, and When Things Go Wrong</h3><p>Events are interest only, since tickets and payments were out of scope. Offline, update and maintenance screens were designed before handoff, in the same visual language as the rest of the app.</p></div>
+            <div class="reveal">
+  <figure class="walk" data-kit="nb" data-title="Events and edge states" data-note="Final design" aria-label="Walkthrough of an event, marking interest, and the offline and update screens">
+            <script type="application/json">{"scenes":[
+              {"s":"event","t":"Events without tickets","d":"Date, place, how many are going against capacity, and who's hosting.","tap":"text:I'm interested","ms":4000},
+              {"s":"interested","t":"Interested, with undo","d":"One tap to show interest, one tap to take it back.","tap":"text:Undo","ms":4000},
+              {"s":"offline","t":"Offline","d":"A clear message and a retry, in the same visual language as the rest of the app.","ms":4000},
+              {"s":"update","t":"Update required","d":"Plus a softer, skippable version for updates that aren't urgent, and a maintenance screen.","ms":4400}
+            ]}</script>
+          </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="redeem">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">04</span>Redeem Only When You're There</h3>
+          <p>The client needed control, so one offer couldn't be redeemed again and again by anyone, anywhere. A code system run by every store wasn't realistic while partners were undecided, so redeeming is tied to being at the store. It's a first-phase answer, and no failure is a dead end.</p>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="nb" data-title="Redeeming" data-note="Final design" aria-label="Walkthrough of redeeming an offer at the store">
+            <script type="application/json">{"scenes":[
+              {"s":"offer","t":"Tap Redeem now","d":"On the offer page, the one primary action is always at the bottom.","tap":"text:Redeem now","ms":3600},
+              {"s":"confirm","fx":"fade","t":"At the store: confirm","d":"Location shows they're at the store. A last check, since each offer can only be used once.","tap":"text:Redeem offer","ms":4400},
+              {"s":"redeemed","t":"Redeemed, and it shows","d":"The button locks as Redeemed, and the offer is tagged Redeemed in their activity.","ms":4400}
+            ]}</script>
+          </figure>
+        </div>
+        <div class="story__media reveal">
+          <figure class="walk" data-kit="nb" data-title="When the check fails" data-note="Edge cases" aria-label="Walkthrough of redemption edge cases: location off, not at the store, and network or server errors">
+            <script type="application/json">{"scenes":[
+              {"s":"location-off","fx":"fade","t":"Location is off","d":"Sign up never asks for location. It's asked for here, when it's needed, and by a banner on home.","tap":"text:Turn on location","ms":7000},
+              {"s":"away","fx":"fade","t":"Not at the store yet","d":"Directions and a retry, instead of a flat no.","tap":"text:Get directions","ms":7000},
+              {"s":"error","fx":"fade","t":"Network or server trouble","d":"A plain message and a retry. Network and server errors each have their own version.","tap":"text:Try again","ms":7000}
+            ]}</script>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story story--sub" id="surfaces">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h3 class="h2 part-title"><span class="part-title__n">05</span>Same System, Website and Email</h3>
+          <p>The download website and the verification email reuse the app's type, colour and buttons, so the first thing someone sees outside the app already feels like it.</p>
+        </div>
+        <div class="story__media reveal">
+          <div class="surface-pair">
+              <figure class="reveal">
+                <div class="web-sketch" role="img" aria-label="Sketch of the download website: headline, store buttons, a phone and feature cards">
+                  <div class="web-sketch__bar"><i></i><i></i><i></i><span></span></div>
+                  <div class="web-sketch__nav"><span class="nb-logo" aria-hidden="true"><i></i><b></b></span><div><span>About</span><span>Contact</span><span>Get the app</span></div></div>
+                  <div class="web-sketch__hero">
+                    <div>
+                      <h4>Offers, events and stores near you.</h4>
+                      <p>Free to download. Browse before you sign up.</p>
+                      <div class="web-sketch__stores"><span><span class="ms" aria-hidden="true">phone_iphone</span>iOS</span><span><span class="ms" aria-hidden="true">android</span>Android</span></div>
+                    </div>
+                    <div class="web-sketch__phone" aria-hidden="true"><div class="phone phone--night" data-nb="home"></div></div>
+                  </div>
+                  <div class="web-sketch__feat">
+                    <div><span class="ms" aria-hidden="true">sell</span><b>Local offers</b><small>From stores nearby.</small></div>
+                    <div><span class="ms" aria-hidden="true">event</span><b>Events nearby</b><small>See what's on this week.</small></div>
+                    <div><span class="ms" aria-hidden="true">storefront</span><b>Stores you know</b><small>Hours, directions and more.</small></div>
+                  </div>
+                </div>
+                <figcaption><h3>Download website</h3><p>A hero with store buttons, why people use the app, and how it works in three steps. Desktop and mobile, plus About, Contact and legal pages.</p></figcaption>
+              </figure>
+              <figure class="reveal">
+                <div class="mail-sketch" role="img" aria-label="Sketch of the verification email with a Verify email button">
+                  <div class="mail-sketch__head"><b>Verify your email</b><span>To: you@example.com</span></div>
+                  <div class="mail-sketch__body">
+                    <span class="nb-logo" aria-hidden="true"><i></i><b></b></span>
+                    <h4>Hi Sam,</h4>
+                    <p>Confirm this is your email so we can help if you ever change your phone number.</p>
+                    <div class="nb-btn">Verify email</div>
+                    <small>This link expires in 30 minutes. Didn't sign up? Ignore this email.</small>
+                  </div>
+                </div>
+                <figcaption><h3>Verification email</h3><p>Email is optional, but a verified one can back up account changes like a new phone number. Offer and event alerts by email were planned next.</p></figcaption>
+              </figure>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="decisions">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">Key Decisions</h2>
+          <p>Five calls that shaped the app.</p>
+        </div>
+        <div class="story__media">
+          <ol class="calls">
+            <li class="call reveal" style="--i:0"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">where_to_vote</span></span><span class="call__n">01</span></div><strong>Redeem at the store, not anywhere</strong><p>Control over redemptions, without codes from undecided partners.</p></li>
+            <li class="call reveal" style="--i:1"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">dark_mode</span></span><span class="call__n">02</span></div><strong>Dark first, colour only for actions</strong><p>With photos on every screen, colour had to mean "you can act here".</p></li>
+            <li class="call reveal" style="--i:2"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">bolt</span></span><span class="call__n">03</span></div><strong>Let people in fast</strong><p>Every screen before the feed is a chance to lose someone.</p></li>
+            <li class="call reveal" style="--i:3"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">star</span></span><span class="call__n">04</span></div><strong>Interest, not tickets</strong><p>No payments yet, but people still see what's filling up.</p></li>
+            <li class="call reveal" style="--i:4"><div class="call__top"><span class="tile__icon"><span class="ms" aria-hidden="true">alt_route</span></span><span class="call__n">05</span></div><strong>Design the unhappy paths up front</strong><p>Developers got a screen for every case, not a guess.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="story" id="outcome">
+      <div class="story__in">
+        <div class="story__text reveal">
+          <h2 class="h2">The Outcome</h2>
+          <p>The design was complete and with the developers, but the app didn't go live, so there are no numbers to share. Here's what the project taught me.</p>
+        </div>
+        <div class="story__media reveal">
+          <ul class="tiles tiles--3">
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">tune</span></span><strong>Change it once</strong><p>Feedback on colour and buttons was fixed in the components and reached every screen.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">handshake</span></span><strong>Own the handoff</strong><p>Working with the developers kept decisions consistent after the team got smaller.</p></li>
+            <li class="tile"><span class="tile__icon"><span class="ms" aria-hidden="true">flag</span></span><strong>First answers are allowed</strong><p>Redemption wasn't settled, so we designed the simplest honest check and left room to change it.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+      </div>
+    </div>
+
+    <section class="more" aria-labelledby="more-t">
+      <div class="wrap">
+        <h2 class="h2" id="more-t">More Work</h2>
+        <div class="more__grid">
+          <a class="mcard wcard--attendance" href="case-attendance.html">
+            <div class="mcard__text">
+              <p class="wcard__client"><span>Client <span class="redact" style="--w:4.4em"></span> under NDA</span><span>Mobile app</span><span>3 days</span></p>
+              <h3 class="mcard__title">Punch in, <span class="serif">punch out.</span></h3>
+              <p class="mcard__desc">Geotagged attendance for a live field audit app, owned end to end in three days.</p>
+              <span class="mcard__cta">Read the case study<span class="ms" aria-hidden="true">arrow_forward</span></span>
+            </div>
+            <div class="mcard__peek" aria-hidden="true"><div class="phone" data-screen="punch-in"></div></div>
+          </a>
+          <a class="mcard wcard--thero" href="case-thero.html">
+            <div class="mcard__text">
+              <p class="wcard__client"><span><img class="wcard__icon" src="assets/img/thero/logo-final.svg" alt="">Thero</span><span>Personal project</span><span>iOS app</span></p>
+              <h3 class="mcard__title">One list, <span class="serif">one clear order.</span></h3>
+              <p class="mcard__desc">My own to-do app, where every task gets its own priority. Designed, built and shipped.</p>
+              <span class="mcard__cta">Read the case study<span class="ms" aria-hidden="true">arrow_forward</span></span>
+            </div>
+            <div class="mcard__peek" aria-hidden="true"><div class="phone phone--shot"><img src="assets/img/thero/thero-home.jpg" alt="" loading="lazy"></div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer__in">
+        <p class="footer__cta">Liked the process? <span class="serif">Let's talk.</span></p>
+        <p class="footer__sub">Have a role in mind, or just want to say hello? My inbox is open.</p>
+        <div class="footer__actions">
+          <div class="fmailbox">
+            <a class="fmailbox__link" href="mailto:sirohi.ishan@icloud.com"><span class="ms" aria-hidden="true">mail</span>sirohi.ishan@icloud.com</a>
+            <button class="fmailbox__copy" type="button" data-copy="sirohi.ishan@icloud.com"><span class="ms" aria-hidden="true">content_copy</span>Copy</button>
+          </div>
+        </div>
+        <nav class="footer__links" aria-label="Elsewhere">
+          <a href="https://linkedin.com/in/ishansirohi" target="_blank" rel="noopener">LinkedIn<span class="ms" aria-hidden="true">arrow_outward</span></a>
+          <a href="https://www.behance.net/ishansirohi" target="_blank" rel="noopener">Behance<span class="ms" aria-hidden="true">arrow_outward</span></a>
+          <a href="https://www.instagram.com/sirohiishan/" target="_blank" rel="noopener">Instagram<span class="ms" aria-hidden="true">arrow_outward</span></a>
+        </nav>
+      </div>
+      <p class="footer__mark reveal" aria-hidden="true"><span style="--i:0">I</span><span style="--i:1">s</span><span style="--i:2">h</span><span style="--i:3">a</span><span style="--i:4">n</span><span style="--i:5">&nbsp;</span><span style="--i:6">S</span><span style="--i:7">i</span><span style="--i:8">r</span><span style="--i:9">o</span><span style="--i:10">h</span><span style="--i:11">i</span></p>
+      <div class="footer__base">
+        <span>© <span data-year>2026</span> Ishan Sirohi</span>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/screens-local.js"></script>
+  <script src="js/walkthrough.js"></script>
+  <script>(function() {
+    const links = [ ...document.querySelectorAll(".toc a") ];
+    const targets = links.map(a => document.querySelector(a.getAttribute("href")));
+    const bar = document.getElementById("progress");
+    let last = -2;
+    function onScroll() {
+        const h = document.documentElement;
+        bar.style.setProperty("--p", h.scrollTop / (h.scrollHeight - h.clientHeight));
+        let cur = -1;
+        targets.forEach((t, i) => {
+            const r = (t.querySelector("h2, h3") || t).getBoundingClientRect();
+            if (r.top < window.innerHeight * .35) cur = i;
+        });
+        links.forEach((a, i) => a.classList.toggle("is-on", i === cur));
+        const inSol = cur >= 0 && (links[cur].classList.contains("toc__parent") || links[cur].classList.contains("toc__kid"));
+        document.querySelector(".toc").classList.toggle("sol-open", inSol);
+        if (inSol) document.querySelector(".toc__parent").classList.add("is-on");
+        if (cur >= 0 && cur !== last) {
+            const a = links[cur];
+            a.parentElement.scrollTo({
+                left: a.offsetLeft - 16,
+                behavior: "smooth"
+            });
+        }
+        last = cur;
+    }
+    let raf;
+    window.addEventListener("scroll", () => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(onScroll);
+    }, {
+        passive: true
+    });
+    onScroll();
+})();</script>
+</body>
+</html>
