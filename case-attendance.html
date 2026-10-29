@@ -443,10 +443,15 @@
         if (inSol) document.querySelector(".toc__parent").classList.add("is-on");
         if (cur >= 0 && cur !== last) {
             const a = links[cur];
-            a.parentElement.scrollTo({
-                left: a.offsetLeft - 16,
-                behavior: "smooth"
-            });
+            const scroller = a.closest(".toc__in");
+            if (scroller && getComputedStyle(scroller).overflowX !== "visible") {
+                const target = a.closest(".toc__kids") ? document.querySelector(".toc__parent") || a : a;
+                const inset = parseFloat(getComputedStyle(scroller).getPropertyValue("--s-4")) || 0;
+                scroller.scrollTo({
+                    left: Math.max(0, scroller.scrollLeft + target.getBoundingClientRect().left - scroller.getBoundingClientRect().left - inset),
+                    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+                });
+            }
         }
         last = cur;
     }

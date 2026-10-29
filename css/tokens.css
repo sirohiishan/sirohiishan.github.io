@@ -77,6 +77,15 @@
   --about-intro-mobile-gap: var(--s-5);
   --about-intro-video-min: var(--s-9);
   --about-intro-copy-gap: var(--s-4);
+  --bbi-cue-gap: var(--s-2);
+  --bbi-cue-inset: var(--s-5);
+  --bbi-cue-reserve: var(--s-9);
+  --bbi-cue-width: var(--s-5);
+  --bbi-cue-height: calc(var(--s-5) + var(--s-3));
+  --bbi-cue-stroke: 2px;
+  --bbi-compact-art-scale: .75;
+  --bbi-cue-travel: var(--s-3);
+  --bbi-cue-duration: calc(2 * var(--t-slow));
   --bring-card-pad: clamp(28px, 4vw, 56px);
   --bring-title-gap: var(--s-7);
   --bring-mobile-gap: var(--s-6);

@@ -101,6 +101,8 @@
         passive: true
     });
     const nav = document.querySelector(".nav");
+    const caseToc = document.querySelector(".case-layout .toc");
+    const horizontalCaseNav = matchMedia("(max-width: 1199px)");
     let lastY = window.scrollY, travel = 0;
     function setHidden(h) {
         nav.classList.toggle("is-hidden", h);
@@ -110,8 +112,11 @@
     function navTheme() {
         if (!nav) return;
         const pill = nav.querySelector(".nav__in");
+        const tocRect = caseToc?.getBoundingClientRect();
+        const caseBand = !!(horizontalCaseNav.matches && tocRect && tocRect.top <= nav.offsetHeight && tocRect.bottom > 0);
+        nav.classList.toggle("has-case-band", caseBand);
         const under = document.elementsFromPoint(window.innerWidth / 2, pill.offsetTop + pill.offsetHeight / 2).find(el => !nav.contains(el));
-        nav.classList.toggle("is-dark", !!(under && under.closest(darkSel) && !under.closest(".mnav")));
+        nav.classList.toggle("is-dark", !caseBand && !!(under && under.closest(darkSel) && !under.closest(".mnav")));
     }
     function onScroll() {
         if (!nav || document.body.classList.contains("menu-open")) return;

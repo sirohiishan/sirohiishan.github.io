@@ -4,20 +4,9 @@
     if (!stage || !dlg) return;
     const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
     let motionPaused = motionPreference.matches;
-    const motionButton = document.querySelector("[data-pg-motion]");
-    const updateMotion = () => {
-        motionButton?.setAttribute("aria-pressed", String(motionPaused));
-        motionButton?.setAttribute("aria-label", motionPaused ? "Play background motion" : "Pause background motion");
-        if (motionButton) motionButton.querySelector(".ms").textContent = motionPaused ? "play_arrow" : "pause";
-        render();
-    };
-    motionButton?.addEventListener("click", () => {
-        motionPaused = !motionPaused;
-        updateMotion();
-    });
     motionPreference.addEventListener("change", event => {
         motionPaused = event.matches;
-        updateMotion();
+        render();
     });
     const dir = "assets/playground/";
     const media = [ [ "jolly", "Jolly", .998, true ], [ "lamp-chair", "Lamp and chair", .562, true ], [ "open-eyes", "Open eyes", 1 ], [ "render", "Little creature", .462, true ], [ "skull-on-stone", "Skull on stone", 1.781 ], [ "uwu-vision", "UwU vision", 1.779, true ], [ "back", "TV head, from behind", 1 ], [ "black-background", "Battery pack", .998, true ], [ "cat", "Furry friend", 1.781 ], [ "front", "TV head", 1 ], [ "glassy", "Glassy", .998, true ], [ "my-character", "My character", .562, true ], [ "ig-post", "Neon strands", .998, true ], [ "lamp-chair-2", "Lamp and chair, take two", .562, true ] ].map(([slug, title, aspect, video]) => ({
@@ -335,10 +324,6 @@
         e.preventDefault();
         queue();
     });
-    document.querySelectorAll("[data-pg-zoom]").forEach(b => b.addEventListener("click", () => {
-        const d = b.dataset.pgZoom;
-        zoomAt(d === "in" ? st.scale * 1.25 : st.scale / 1.25, stage.clientWidth / 2, stage.clientHeight / 2);
-    }));
     document.addEventListener("visibilitychange", () => {
         if (document.hidden) for (const t of tiles.values()) t.querySelector("video")?.pause(); else syncLater();
     });
@@ -363,5 +348,4 @@
     dlg.addEventListener("close", () => wake(false));
     new ResizeObserver(queue).observe(stage);
     render();
-    updateMotion();
 })();

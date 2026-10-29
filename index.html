@@ -104,15 +104,16 @@
           </div>
           <p class="bbi__words" aria-hidden="true">
             <span class="mword is-active" data-fx="build">Build,</span>
-            <span class="mword" data-fx="break">break,</span>
+            <span class="mword" data-fx="test">test,</span>
             <span class="mword serif" data-fx="iterate">iterate.</span>
           </p>
           <div class="bbi__notes">
             <p class="bbi__note is-active">I get a real version on screen fast, so people react to the thing, not a description of it.</p>
-            <p class="bbi__note">Then I try to break it myself: wrong taps, empty states, bad networks, the user nobody planned for.</p>
-            <p class="bbi__note">I fix what broke, test again and repeat. It's done when it holds up, not when it looks nice.</p>
+            <p class="bbi__note">Then I take the inconvenient routes: no signal, nothing to show, a tap in the wrong place.</p>
+            <p class="bbi__note">I refine what needs work, test again and repeat. It’s done when it holds up, not when it looks nice.</p>
           </div>
         </div>
+        <p class="bbi__scroll"><span class="bbi__scroll-mark" aria-hidden="true"><span></span></span><span>Keep scrolling</span></p>
       </div>
     </section>
 
@@ -221,8 +222,8 @@
           </li>
           <li class="bcard bcard--3 claim">
             <div class="bcard__text">
-              <p class="bcard__big">I build the <span class="scrib">system</span> before the screens.</p>
-              <p class="bcard__aside">30+ components, every layer named. Yes, every single one. Yes, I’m that person.</p>
+              <p class="bcard__big">I build the <span class="scrib">design system</span> behind the screens.</p>
+              <p class="bcard__aside">Reusable buttons, fields and states. So the next screen starts with decisions we’ve already made.</p>
             </div>
             <div class="bcard__art">
 <svg class="art" data-k="3" viewBox="0 0 320 220" aria-hidden="true">
@@ -237,28 +238,7 @@
   <rect class="i" pathLength="1" x="214" y="74" width="68" height="42" rx="7"/>
   <rect class="i" pathLength="1" x="214" y="128" width="68" height="18" rx="9"/>
   <path class="i" pathLength="1" d="M214 162 H 266"/><path class="i" pathLength="1" d="M214 176 H 250"/>
-  <text x="24" y="200">30+ of these, all named</text>
-</svg>
-            </div>
-          </li>
-          <li class="bcard bcard--4 claim">
-            <div class="bcard__text">
-              <p class="bcard__big">I <span class="scrib">finish</span> what I start.</p>
-              <p class="bcard__aside">When the other designer left mid project, I took it all the way to handoff. Alone. Dramatically.</p>
-            </div>
-            <div class="bcard__art">
-<svg class="art" data-k="4" viewBox="0 0 320 220" aria-hidden="true">
-  <path class="i" pathLength="1" d="M18 200 H 302"/>
-  <path class="o" pathLength="1" d="M28 186 C 70 182, 92 140, 126 146 S 176 176, 204 140 S 228 104, 246 104"/>
-  <path class="i" pathLength="1" d="M252 200 V 36"/>
-  <rect class="i" pathLength="1" x="252" y="36" width="56" height="40"/>
-  <rect class="f" x="252" y="36" width="14" height="10"/><rect class="f" x="280" y="36" width="14" height="10"/>
-  <rect class="f" x="266" y="46" width="14" height="10"/><rect class="f" x="294" y="46" width="14" height="10"/>
-  <rect class="f" x="252" y="56" width="14" height="10"/><rect class="f" x="280" y="56" width="14" height="10"/>
-  <rect class="f" x="266" y="66" width="14" height="10"/><rect class="f" x="294" y="66" width="14" height="10"/>
-  <path class="o" pathLength="1" d="M120 64 L 130 74 L 150 50"/>
-  <text class="to" x="156" y="70">handed off</text>
-  <text x="24" y="122">solo, from here</text>
+  <text x="24" y="200">Shared pieces</text>
 </svg>
             </div>
           </li>
@@ -295,7 +275,7 @@
                 </div>
                 <p class="trail__when">May 2024 - Jul 2024 · Saket, New Delhi</p>
               </div>
-              <p class="trail__note">Landing pages for 7+ brands in three months, and my first clickable prototypes.</p>
+              <p class="trail__note">Landing pages for 7+ brands in three months.</p>
             </li>
             <li class="xp4__role" style="--k:2">
               <span class="xp4__y">2025</span>
@@ -305,7 +285,7 @@
                 </div>
                 <p class="trail__when">Mar 2025 - Apr 2026 · Gurugram</p>
               </div>
-              <p class="trail__note">A certification platform end to end, then a six week app I finished as the only designer. Named Standout Performer for Jan to Mar 2026.</p>
+              <p class="trail__note">Designed a neighbourhood app in six weeks, from the component system to handoff. Named Standout Performer.</p>
             </li>
             <li class="xp4__role" style="--k:3">
               <span class="xp4__y">2026</span>
@@ -375,6 +355,7 @@
   <script src="js/screens-local.js"></script>
   <script>(function() {
     const bbi = document.querySelector("[data-bbi]");
+    new IntersectionObserver(([entry]) => bbi.classList.toggle("is-in-view", entry.isIntersecting)).observe(bbi);
     const words = [ ...bbi.querySelectorAll(".mword") ];
     const notes = [ ...bbi.querySelectorAll(".bbi__note") ];
     words.forEach(w => {
