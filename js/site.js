@@ -101,6 +101,20 @@
         passive: true
     });
     const nav = document.querySelector(".nav");
+    const resume = document.querySelector(".nav .nav__resume");
+    if (resume && matchMedia("(hover: hover)").matches) {
+        const cat = document.createElement("span");
+        cat.className = "resume-cat";
+        cat.setAttribute("aria-hidden", "true");
+        cat.innerHTML = '<svg viewBox="0 0 80 80"><path class="kitty__ear" d="M12 34 L20 6 L37 24 Z"/><path class="kitty__ear" d="M43 24 L60 6 L68 34 Z"/><path class="kitty__ear-in" d="M18 28 L22 14 L30 23 Z"/><path class="kitty__ear-in" d="M50 23 L58 14 L62 28 Z"/><ellipse class="kitty__head" cx="40" cy="46" rx="30" ry="26"/><ellipse class="kitty__eye" cx="29" cy="44" rx="7.5" ry="8"/><ellipse class="kitty__eye" cx="51" cy="44" rx="7.5" ry="8"/><circle class="kitty__pupil" cx="29" cy="44" r="3.6"/><circle class="kitty__pupil" cx="51" cy="44" r="3.6"/><path class="kitty__nose" d="M37 54 H43 L40 58 Z"/><path class="kitty__mouth" d="M40 58 Q37 62 33.5 60 M40 58 Q43 62 46.5 60"/><ellipse class="kitty__shine" cx="31" cy="41.5" rx="1.3" ry="1.5"/><ellipse class="kitty__shine" cx="53" cy="41.5" rx="1.3" ry="1.5"/></svg><span class="resume-cat__paw"></span><span class="resume-cat__paw"></span>';
+        resume.appendChild(cat);
+        const pupils = [ ...cat.querySelectorAll(".kitty__pupil") ];
+        resume.addEventListener("pointermove", e => pupils.forEach(pu => {
+            const b = pu.getBoundingClientRect();
+            const dx = e.clientX - (b.left + b.width / 2), dy = e.clientY - (b.top + b.height / 2), d = Math.hypot(dx, dy) || 1;
+            pu.style.transform = "translate(" + dx / d * 3 + "px," + dy / d * 3 + "px)";
+        }));
+    }
     const caseToc = document.querySelector(".case-layout .toc");
     const horizontalCaseNav = matchMedia("(max-width: 1199px)");
     let lastY = window.scrollY, travel = 0;
@@ -208,62 +222,50 @@
             link.href = "watch.html?" + params;
             link.innerHTML = '<span class="cover__watch-ic"><span class="ms" aria-hidden="true">play_arrow</span></span>' + (cv.dataset.caseCaption || "Watch a quick video");
             (cv.querySelector(".cover__main") || cv.querySelector(".cover__text")).appendChild(link);
+            const dock = document.createElement("div");
+            dock.className = "case-dock";
+            dock.innerHTML = '<a class="case-dock__link" href="' + link.href + '"><span class="case-dock__thumb"><img src="' + cv.dataset.casePoster + '" alt="" loading="lazy"><span class="case-dock__play" aria-hidden="true"><span class="ms">play_arrow</span></span></span><span class="case-dock__t">' + (cv.dataset.caseCaption || "Watch the project") + '</span></a><button class="case-dock__close" type="button" aria-label="Hide video card"><span class="ms" aria-hidden="true">close</span></button>';
+            document.body.appendChild(dock);
+            let ready = false, nearEnd = false, closed = false;
+            const sync = () => {
+                const on = ready && !nearEnd && !closed;
+                dock.classList.toggle("is-on", on);
+            };
+            const end = document.querySelector(".footer");
+            if (end) new IntersectionObserver(([en]) => {
+                nearEnd = en.isIntersecting;
+                sync();
+            }).observe(end);
+            dock.querySelector(".case-dock__close").addEventListener("click", () => {
+                closed = true;
+                sync();
+            });
+            setTimeout(() => {
+                ready = true;
+                sync();
+            }, 900);
         }
     }
     const b15 = document.querySelector(".bring15");
     if (b15) {
-        const bcards = b15.querySelectorAll(".bcard");
-        const pin = b15.querySelector(".bring15__pin");
-        const track = b15.querySelector(".bring15__track");
-        const wide = matchMedia("(min-width: 901px) and (min-height: 600px)");
-        let travel = 0, raf = 0;
-        const cardObserver = new IntersectionObserver(entries => {
+        const cards = [ ...b15.querySelectorAll(".bcard") ];
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("is-in");
-                    cardObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
             threshold: .25,
             rootMargin: "0px 0px -10% 0px"
         });
-        bcards.forEach(card => cardObserver.observe(card));
-        const move = () => {
-            raf = 0;
-            if (!b15.classList.contains("is-h")) return;
-            const p = travel ? Math.min(1, Math.max(0, -b15.getBoundingClientRect().top / travel)) : 0;
-            track.style.transform = "translateX(" + (-p * travel).toFixed(1) + "px)";
-            const vw = window.innerWidth;
-            bcards.forEach(card => {
-                const r = card.getBoundingClientRect();
-                if (r.left < vw * .8 && r.top < window.innerHeight * .85) card.classList.add("is-in");
-            });
+        cards.forEach(card => observer.observe(card));
+        const updateCards = () => {
+            if (motionPreference.matches) cards.forEach(card => card.classList.add("is-in"));
         };
-        const size = () => {
-            const horizontal = wide.matches && !motionPreference.matches;
-            b15.classList.toggle("is-h", horizontal);
-            b15.style.height = "";
-            track.style.transform = "";
-            travel = 0;
-            if (motionPreference.matches) bcards.forEach(card => card.classList.add("is-in"));
-            if (horizontal) {
-                travel = Math.max(0, track.scrollWidth - pin.clientWidth);
-                b15.style.height = pin.offsetHeight + travel + "px";
-                move();
-            }
-        };
-        window.addEventListener("scroll", () => {
-            if (!raf && b15.classList.contains("is-h")) raf = requestAnimationFrame(move);
-        }, {
-            passive: true
-        });
-        window.addEventListener("resize", size);
-        window.addEventListener("load", size);
-        wide.addEventListener("change", size);
-        motionPreference.addEventListener("change", size);
-        document.fonts.ready.then(size);
-        size();
+        motionPreference.addEventListener("change", updateCards);
+        updateCards();
     }
     const pageKey = {
         "": "home",

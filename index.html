@@ -56,7 +56,7 @@
         <a class="mnav__link" href="about.html">About</a>
         <a class="mnav__link" href="playground.html">Playground</a>
         <div class="mnav__actions">
-          <a class="btn btn--primary" href="mailto:sirohi.ishan@icloud.com?subject=Resume%20request"><span class="ms" aria-hidden="true">description</span>Resume</a>
+          <a class="btn btn--primary" href="mailto:sirohi.ishan@icloud.com?subject=Resume%20request">Resume<span class="ms" aria-hidden="true">arrow_outward</span></a>
           <a class="btn btn--ghost" href="mailto:sirohi.ishan@icloud.com">Get in touch</a>
         </div>
       </div>
@@ -113,17 +113,27 @@
             <p class="bbi__note">I refine what needs work, test again and repeat. It’s done when it holds up, not when it looks nice.</p>
           </div>
         </div>
-        <p class="bbi__scroll"><span class="bbi__scroll-mark" aria-hidden="true"><span></span></span><span>Keep scrolling</span></p>
       </div>
     </section>
 
     
-    <section class="section" id="work">
-      <div class="wrap">
-        <div class="section-head section-head--pin">
-          <h2 class="h2">Selected Work</h2>
+    <section class="selected-work section--dark" id="work" aria-labelledby="selected-work-title" data-selected-work>
+      <div class="selected-work__pin">
+        <div class="selected-work__lighting" aria-hidden="true">
+          <span class="selected-work__light wcard--attendance"></span>
+          <span class="selected-work__light wcard--neighbourhood"></span>
+          <span class="selected-work__light wcard--thero"></span>
         </div>
-        <a class="wcard wcard--attendance reveal" href="case-attendance.html">
+        <div class="wrap selected-work__body">
+          <div class="selected-work__panels">
+            <div class="selected-work__intro" data-showcase-frame>
+              <div class="sw-orbs" aria-hidden="true"><span class="sw-orb sw-orb--attendance"></span><span class="sw-orb sw-orb--neighbourhood"></span><span class="sw-orb sw-orb--thero"></span></div>
+              <div class="sw-intro">
+                <h2 id="selected-work-title">Selected Work</h2>
+                <p class="sw-intro__sub">Real problems, real constraints, and what I did about them.</p>
+              </div>
+            </div>
+        <a class="wcard wcard--attendance selected-work__project" data-showcase-frame href="case-attendance.html">
           <div class="wcard__text">
             <p class="wcard__client"><span>Client <span class="redact" style="--w:4.4em"></span> under NDA</span><span>Mobile app</span><span>3 days</span></p>
             <h3 class="wcard__title">Punch in, <span class="serif">punch out.</span></h3>
@@ -138,7 +148,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--neighbourhood reveal" href="case-neighbourhood.html">
+        <a class="wcard wcard--neighbourhood selected-work__project" data-showcase-frame href="case-neighbourhood.html">
           <div class="wcard__text">
             <p class="wcard__client"><span>Client <span class="redact" style="--w:4.4em"></span> under NDA</span><span>App and website</span><span>6 weeks</span></p>
             <h3 class="wcard__title">Everything nearby, <span class="serif">one tap away.</span></h3>
@@ -153,7 +163,7 @@
             </div>
           </div>
         </a>
-        <a class="wcard wcard--thero reveal" href="case-thero.html">
+        <a class="wcard wcard--thero selected-work__project" data-showcase-frame href="case-thero.html">
           <div class="wcard__text">
             <p class="wcard__client"><span><img class="wcard__icon" src="assets/img/thero/logo-final.svg" alt="">Thero</span><span>Personal project</span><span>iOS app</span></p>
             <h3 class="wcard__title">One list, <span class="serif">one clear order.</span></h3>
@@ -168,81 +178,79 @@
             </div>
           </div>
         </a>
-        <div class="work-all reveal"><a class="btn btn--ghost" href="work.html">View all work<span class="ms slide" aria-hidden="true">arrow_forward</span></a></div>
+          </div>
+        </div>
+        <span class="selected-work__ending-shade" aria-hidden="true"></span>
+        <div class="wrap selected-work__foot">
+          <div class="selected-work__ending">
+            <a class="sw-more" href="work.html">
+              <span class="sw-more__row">
+                <span class="sw-more__copy">
+                  <span class="sw-more__title">View all <span class="sw-more__mark">Work</span></span>
+                </span>
+                <span class="sw-more__go" aria-hidden="true"><span class="ms">arrow_forward</span></span>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
     
-    <section class="section--alt bring15" id="what-i-bring" aria-label="What I bring">
-      <div class="bring15__pin">
-        <div class="wrap bring15__head">
-          <h2 class="bring15__title">What I Bring</h2>
-        </div>
-        <div class="bring15__view">
-          <ol class="bring15__track">
-          <li class="bcard bcard--1 claim">
-            <div class="bcard__text">
-              <p class="bcard__big">I start with the <span class="scrib">unhappy path.</span></p>
-              <p class="bcard__aside">Translation: I will ask “but what if there’s no signal?” in every single review. Sorry in advance.</p>
+    <section class="section--alt bring15 bfilm" id="what-i-bring" aria-labelledby="what-i-bring-title" data-bfilm>
+      <div class="bfilm__stage">
+        <div class="wrap bfilm__in">
+          <h2 class="bring15__title bfilm__title" id="what-i-bring-title">What I Bring</h2>
+          <div class="bfilm__captions">
+            <div class="bfilm__cap" data-bfilm-cap>
+              <p class="bfilm__big">I start with the <span class="scrib">unhappy path.</span></p>
+              <p class="bfilm__aside">Translation: I will ask “but what if there’s no signal?” in every single review. Sorry in advance.</p>
             </div>
-            <div class="bcard__art">
-<svg class="art" data-k="1" viewBox="0 0 320 220" aria-hidden="true">
-  <circle class="f" cx="40" cy="170" r="6"/>
-  <path class="i" pathLength="1" d="M46 168 C 80 160, 100 150, 128 140"/>
-  <path class="i" pathLength="1" d="M128 140 C 170 120, 212 82, 258 64"/>
-  <circle class="i" pathLength="1" cx="276" cy="56" r="15"/>
-  <path class="i" pathLength="1" d="M269 59 Q 276 66 283 59"/>
-  <circle class="f" cx="271" cy="52" r="1.8"/><circle class="f" cx="281" cy="52" r="1.8"/>
-  <path class="o" pathLength="1" d="M128 140 C 148 162, 158 140, 176 166 S 206 150, 220 182 S 246 174, 256 188"/>
-  <path class="o" pathLength="1" d="M276 170 L 294 202 L 258 202 Z"/>
-  <path class="o" pathLength="1" d="M276 181 L 276 191"/><circle class="fo" cx="276" cy="197" r="1.8"/>
-  <text x="168" y="86" transform="rotate(-24 168 86)">happy path</text>
-  <text class="to" x="120" y="214">the one I check first</text>
+            <div class="bfilm__cap" data-bfilm-cap>
+              <p class="bfilm__big">I bring a <span class="scrib">prototype,</span> not a pitch.</p>
+              <p class="bfilm__aside">Clicking a real thing beats a 45 minute call about imagining one.</p>
+            </div>
+            <div class="bfilm__cap" data-bfilm-cap>
+              <p class="bfilm__big">I build the <span class="scrib">design system</span> behind the screens.</p>
+              <p class="bfilm__aside">Reusable buttons, fields and states. So the next screen starts with decisions we’ve already made.</p>
+            </div>
+          </div>
+          <div class="bfilm__scene">
+<svg class="bfilm__svg" viewBox="0 0 560 420" role="img" aria-label="A phone screen loses signal and shows a friendly offline state, then a cursor taps Send instead of a speech bubble saying imagine if, then the screen’s pieces move into a shared library and build the next screen.">
+  <g data-f="tray"><rect class="tray" x="196" y="60" width="168" height="300" rx="18"/><text class="lbl" x="280" y="46" text-anchor="middle">Shared pieces</text></g>
+  <g data-f="phone1">
+    <rect class="paper sk" data-f="frame1" x="200" y="30" width="160" height="360" rx="26" pathLength="1"/>
+    <rect class="ink" x="255" y="40" width="50" height="8" rx="4"/>
+    <g data-f="ui1">
+      <g data-f="bars"><rect class="ink" x="216" y="60" width="4" height="6" rx="1"/><rect class="ink" x="222" y="57" width="4" height="9" rx="1"/><rect class="ink" x="228" y="54" width="4" height="12" rx="1"/><rect class="ink" x="234" y="51" width="4" height="15" rx="1"/></g>
+      <rect class="ink" data-f="head" x="214" y="78" width="84" height="10" rx="5"/>
+      <g data-f="pill"><rect class="pill" x="230" y="74" width="100" height="22" rx="11"/><text class="pill-t" x="280" y="89" text-anchor="middle">No signal</text></g>
+      <g data-f="normal"><rect class="soft" x="214" y="104" width="132" height="84" rx="12"/><rect class="ink" x="226" y="120" width="70" height="8" rx="4"/><rect class="mute" x="226" y="136" width="96" height="6" rx="3"/><rect class="mute" x="226" y="148" width="64" height="6" rx="3"/><rect class="field" x="214" y="200" width="132" height="28" rx="14"/><rect class="soft" x="214" y="242" width="132" height="48" rx="10"/></g>
+      <g data-f="offline"><circle class="line" cx="280" cy="146" r="22"/><path class="line" d="M268 150 Q 280 134 292 150"/><circle class="ink" cx="280" cy="154" r="3"/><path class="sig" d="M262 128 L 298 164"/><text class="t-b" x="280" y="196" text-anchor="middle">You’re offline</text><text class="t-s" x="280" y="214" text-anchor="middle">We kept your draft</text></g>
+      <g data-f="done"><circle class="sigf" cx="280" cy="146" r="24"/><path class="check" d="M269 146 L 277 154 L 292 138"/><text class="t-b" x="280" y="198" text-anchor="middle">Sent</text></g>
+      <g data-f="btn"><rect class="sigf" x="214" y="336" width="132" height="36" rx="18"/><text class="btn-t" x="280" y="359" text-anchor="middle">Send</text></g>
+    </g>
+  </g>
+  <g data-f="note1"><text class="note" x="8" y="92">what if there’s</text><text class="note" x="8" y="112">no signal?</text><path class="sig" data-f="arrow1" pathLength="1" d="M118 108 C 160 104, 186 86, 206 66"/><path class="sig" d="M196 64 L 207 64 L 206 75"/></g>
+  <g data-f="bubble"><path class="paper line" d="M20 150 H 166 Q 178 150 178 162 V 196 Q 178 208 166 208 H 60 L 44 224 V 208 H 20 Q 8 208 8 196 V 162 Q 8 150 20 150 Z"/><text class="t-m" x="24" y="185">imagine if…</text><path class="sig" data-f="strike" pathLength="1" d="M4 226 L 186 142"/></g>
+  <g data-f="note2"><text class="note" x="374" y="318">just click it</text><path class="sig" pathLength="1" d="M394 326 C 382 336, 370 344, 356 350"/></g>
+  <circle class="ripple" data-f="ripple" cx="300" cy="354" r="30"/>
+  <g data-f="cursor"><path class="cursor" d="M0 0 L 0 22 L 6 17 L 10 26 L 14 24 L 10 15 L 17 15 Z"/></g>
+  <g data-f="piecesA">
+    <rect class="soft piece" data-from="-186,26" x="214" y="78" width="132" height="84" rx="12"/>
+    <rect class="field piece" data-from="-186,18" x="214" y="182" width="132" height="28" rx="14"/>
+    <rect class="sigf piece" data-from="-186,110" x="214" y="226" width="132" height="36" rx="18"/>
+    <rect class="ink piece" data-from="-186,-198" x="214" y="276" width="84" height="10" rx="5"/>
+  </g>
+  <g data-f="phone2"><rect class="paper sk" data-f="frame2" x="386" y="30" width="160" height="360" rx="26" pathLength="1"/><rect class="ink" x="441" y="40" width="50" height="8" rx="4"/></g>
+  <g data-f="piecesB">
+    <rect class="ink piece" data-from="-186,198" x="400" y="78" width="84" height="10" rx="5"/>
+    <rect class="soft piece" data-from="-186,-22" x="400" y="100" width="132" height="84" rx="12"/>
+    <rect class="field piece" data-from="-186,-16" x="400" y="198" width="132" height="28" rx="14"/>
+    <rect class="sigf piece" data-from="-186,-110" x="400" y="336" width="132" height="36" rx="18"/>
+  </g>
 </svg>
-            </div>
-          </li>
-          <li class="bcard bcard--2 claim">
-            <div class="bcard__text">
-              <p class="bcard__big">I bring a <span class="scrib">prototype,</span> not a pitch.</p>
-              <p class="bcard__aside">Clicking a real thing beats a 45 minute call about imagining one.</p>
-            </div>
-            <div class="bcard__art">
-<svg class="art" data-k="2" viewBox="0 0 320 220" aria-hidden="true">
-  <path class="i" pathLength="1" d="M40 36 H 140 Q 154 36 154 50 V 84 Q 154 98 140 98 H 74 L 54 116 V 98 H 40 Q 26 98 26 84 V 50 Q 26 36 40 36 Z"/>
-  <text x="44" y="74">imagine if…</text>
-  <path class="o" pathLength="1" d="M22 104 C 64 82, 112 62, 162 40"/>
-  <rect class="i" pathLength="1" x="176" y="56" width="120" height="146" rx="16"/>
-  <path class="i" pathLength="1" d="M192 82 H 256"/><path class="i" pathLength="1" d="M192 98 H 236"/>
-  <rect class="o" pathLength="1" x="192" y="150" width="88" height="28" rx="14"/>
-  <path class="i paper" pathLength="1" d="M246 166 L 246 196 L 254 188 L 261 202 L 267 199 L 260 185 L 271 185 Z"/>
-  <path class="o" pathLength="1" d="M236 158 L 229 151"/><path class="o" pathLength="1" d="M247 154 L 247 144"/><path class="o" pathLength="1" d="M258 158 L 265 151"/>
-  <text class="to" x="190" y="40">just click it</text>
-</svg>
-            </div>
-          </li>
-          <li class="bcard bcard--3 claim">
-            <div class="bcard__text">
-              <p class="bcard__big">I build the <span class="scrib">design system</span> behind the screens.</p>
-              <p class="bcard__aside">Reusable buttons, fields and states. So the next screen starts with decisions we’ve already made.</p>
-            </div>
-            <div class="bcard__art">
-<svg class="art" data-k="3" viewBox="0 0 320 220" aria-hidden="true">
-  <rect class="i" pathLength="1" x="24" y="34" width="44" height="44" rx="9"/>
-  <circle class="o" pathLength="1" cx="106" cy="56" r="22"/>
-  <rect class="i" pathLength="1" x="24" y="98" width="84" height="26" rx="13"/>
-  <path class="i" pathLength="1" d="M24 146 H 98"/><path class="i" pathLength="1" d="M24 160 H 74"/>
-  <path class="o" pathLength="1" d="M126 108 C 146 98, 164 102, 182 110"/>
-  <path class="o" pathLength="1" d="M171 99 L 184 110 L 171 121"/>
-  <rect class="i" pathLength="1" x="198" y="24" width="100" height="176" rx="16"/>
-  <circle class="o" pathLength="1" cx="222" cy="52" r="10"/>
-  <rect class="i" pathLength="1" x="214" y="74" width="68" height="42" rx="7"/>
-  <rect class="i" pathLength="1" x="214" y="128" width="68" height="18" rx="9"/>
-  <path class="i" pathLength="1" d="M214 162 H 266"/><path class="i" pathLength="1" d="M214 176 H 250"/>
-  <text x="24" y="200">Shared pieces</text>
-</svg>
-            </div>
-          </li>
-          </ol>
+          </div>
         </div>
       </div>
     </section>
@@ -325,11 +333,14 @@
     </section>
   </main>
 
+  <span class="scroll-hint" data-scroll-hint aria-hidden="true"><span class="scroll-hint__ring"></span><span class="scroll-hint__ring"></span><span class="scroll-hint__ring"></span></span>
+  <p class="bbi__scroll scroll-guide" data-scroll-guide><span class="bbi__scroll-mark" aria-hidden="true"><span></span></span><span>Keep scrolling</span></p>
+
   <footer class="footer" id="contact">
     <div class="wrap">
       <div class="footer__in">
-        <p class="footer__cta">Hiring a product designer? <span class="serif">Let’s talk.</span></p>
-        <p class="footer__sub">Have a role in mind, or just want to say hello? My inbox is open.</p>
+        <p class="footer__cta">That’s the work. <span class="serif">Now the email.</span></p>
+        <p class="footer__sub">If something here fits your team, write to me.</p>
         <div class="footer__actions">
           <div class="fmailbox">
             <a class="fmailbox__link" href="mailto:sirohi.ishan@icloud.com"><span class="ms" aria-hidden="true">mail</span>sirohi.ishan@icloud.com</a>
@@ -353,6 +364,9 @@
   <script src="js/site.js"></script>
   <script src="js/screens.js"></script>
   <script src="js/screens-local.js"></script>
+  <script src="js/selected-work.js"></script>
+  <script src="js/what-i-bring.js"></script>
+  <script src="js/scroll-guide.js"></script>
   <script>(function() {
     const bbi = document.querySelector("[data-bbi]");
     new IntersectionObserver(([entry]) => bbi.classList.toggle("is-in-view", entry.isIntersecting)).observe(bbi);

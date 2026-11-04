@@ -328,24 +328,41 @@
         if (document.hidden) for (const t of tiles.values()) t.querySelector("video")?.pause(); else syncLater();
     });
     const intro = document.querySelector(".pg__intro");
-    let idle = null;
-    const showIntro = () => {
-        if (!dlg.open) intro?.classList.remove("is-gone");
-    };
-    const wake = hide => {
-        if (hide) intro?.classList.add("is-gone");
+    const cue = document.createElement("p");
+    cue.className = "pg__cue";
+    cue.setAttribute("aria-hidden", "true");
+    cue.innerHTML = '<span class="ms">swipe</span>' + (matchMedia("(pointer: coarse)").matches ? "Swipe to explore" : "Scroll or drag to explore");
+    stage.parentElement.appendChild(cue);
+    const idleDelay = () => parseFloat(getComputedStyle(cue).getPropertyValue("--pg-cue-delay")) || 7e3;
+    let started = false, idle = 0;
+    const rest = () => {
         clearTimeout(idle);
-        idle = setTimeout(showIntro, 6e3);
+        idle = setTimeout(() => {
+            if (!dlg.open && !document.hidden) cue.classList.add("is-on");
+        }, idleDelay());
     };
-    [ "wheel", "pointerdown", "keydown", "touchstart", "gesturestart" ].forEach(ev => stage.addEventListener(ev, () => wake(true), {
+    const busy = () => {
+        if (!started) {
+            started = true;
+            intro?.classList.add("is-gone");
+        }
+        cue.classList.remove("is-on");
+        rest();
+    };
+    [ "wheel", "pointerdown", "keydown", "touchstart", "gesturestart" ].forEach(ev => stage.addEventListener(ev, busy, {
         passive: true
     }));
-    stage.addEventListener("pointermove", () => {
-        if (intro?.classList.contains("is-gone")) wake(false);
+    [ "pointermove", "wheel", "touchmove", "keydown" ].forEach(ev => window.addEventListener(ev, () => {
+        if (started) busy();
     }, {
         passive: true
+    }));
+    new MutationObserver(() => {
+        if (dlg.open) cue.classList.remove("is-on"); else if (started) rest();
+    }).observe(dlg, {
+        attributes: true,
+        attributeFilter: [ "open" ]
     });
-    dlg.addEventListener("close", () => wake(false));
     new ResizeObserver(queue).observe(stage);
     render();
 })();
