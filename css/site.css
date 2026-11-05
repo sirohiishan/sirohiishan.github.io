@@ -300,18 +300,18 @@ h4 {
 }
 @keyframes pulse {
   70% {
-    box-shadow: 0 0 0 8px color-mix(in srgb, var(--signal-fill) 0, transparent)
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--signal-fill) 0%, transparent)
   }
   100% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal-fill) 0, transparent)
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal-fill) 0%, transparent)
   }
 }
 @keyframes pulse-ok {
   70% {
-    box-shadow: 0 0 0 8px color-mix(in srgb, var(--ok) 0, transparent)
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--ok) 0%, transparent)
   }
   100% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 0, transparent)
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 0%, transparent)
   }
 }
 .redact {
@@ -449,7 +449,7 @@ h4 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--paper) 82%, transparent) 0, color-mix(in srgb, var(--paper) 55%, transparent) 34%, color-mix(in srgb, var(--paper) 0, transparent) 60%)
+  background: linear-gradient(90deg, color-mix(in srgb, var(--paper) 82%, transparent) 0, color-mix(in srgb, var(--paper) 55%, transparent) 34%, color-mix(in srgb, var(--paper) 0%, transparent) 60%)
 }
 .hero__in {
   padding-top: 120px;
@@ -516,7 +516,7 @@ h4 {
     height: 64%
   }
   .hero__video::after {
-    background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 0, transparent) 36%, color-mix(in srgb, var(--paper) 85%, transparent) 54%, var(--paper) 62%)
+    background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 0%, transparent) 36%, color-mix(in srgb, var(--paper) 85%, transparent) 54%, var(--paper) 62%)
   }
   .hero__in {
     padding-top: 52svh
@@ -3269,7 +3269,7 @@ a.copy-btn {
   gap: 4px;
   flex: none;
   margin-top: auto;
-  background: linear-gradient(color-mix(in srgb, var(--ds-grey-950) 0, transparent), var(--nb-bg) 24%);
+  background: linear-gradient(color-mix(in srgb, var(--ds-grey-950) 0%, transparent), var(--nb-bg) 24%);
   position: relative;
   z-index: 1
 }
@@ -3523,7 +3523,7 @@ a.copy-btn {
   right: 0;
   bottom: 0;
   padding: 26px 10px 10px;
-  background: linear-gradient(color-mix(in srgb, var(--dark) 0, transparent), color-mix(in srgb, var(--dark) 85%, transparent));
+  background: linear-gradient(color-mix(in srgb, var(--dark) 0%, transparent), color-mix(in srgb, var(--dark) 85%, transparent));
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -9779,7 +9779,7 @@ body.menu-open .nav.is-dark .icon-btn {
   right: 0;
   top: 100%;
   height: var(--s-7);
-  background: linear-gradient(var(--paper-2), color-mix(in srgb, var(--paper-2) 0, transparent));
+  background: linear-gradient(var(--paper-2), color-mix(in srgb, var(--paper-2) 0%, transparent));
   pointer-events: none
 }
 .bring9 .bring8__title {
@@ -11179,7 +11179,7 @@ p .serif {
   }
 }
 .hero__video::after {
-  background: linear-gradient(90deg, color-mix(in srgb, var(--paper) 94%, transparent) 0, color-mix(in srgb, var(--paper) 86%, transparent) 30%, color-mix(in srgb, var(--paper) 50%, transparent) 46%, color-mix(in srgb, var(--paper) 0, transparent) 62%)
+  background: linear-gradient(90deg, color-mix(in srgb, var(--paper) 94%, transparent) 0, color-mix(in srgb, var(--paper) 86%, transparent) 30%, color-mix(in srgb, var(--paper) 50%, transparent) 46%, color-mix(in srgb, var(--paper) 0%, transparent) 62%)
 }
 .hero__title {
   max-width: 9.6em
@@ -11190,7 +11190,7 @@ p .serif {
 }
 @media (max-width: 760px) {
   .hero__video::after {
-    background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 0, transparent) 36%, color-mix(in srgb, var(--paper) 85%, transparent) 54%, var(--paper) 62%)
+    background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 0%, transparent) 36%, color-mix(in srgb, var(--paper) 85%, transparent) 54%, var(--paper) 62%)
   }
   .hero__title {
     max-width: none
@@ -12053,7 +12053,7 @@ a.ab-tile:hover .ab-tile__go .ms {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--dark) 0, transparent) 40%, color-mix(in srgb, var(--dark) 85%, transparent) 100%)
+  background: linear-gradient(180deg, color-mix(in srgb, var(--dark) 0%, transparent) 40%, color-mix(in srgb, var(--dark) 85%, transparent) 100%)
 }
 .ab-fan {
   position: relative;
@@ -14047,14 +14047,14 @@ a.ab-tile:hover .ab-tile__go .ms {
   right: 0;
   top: 100%;
   height: var(--fade);
-  background: linear-gradient(var(--paper), color-mix(in srgb, var(--paper) 0, transparent));
+  background: linear-gradient(var(--paper), color-mix(in srgb, var(--paper) 0%, transparent));
   pointer-events: none
 }
 .section--alt .section-head--pin {
   background: var(--paper-2)
 }
 .section--alt .section-head--pin::after {
-  background: linear-gradient(var(--paper-2), color-mix(in srgb, var(--paper-2) 0, transparent))
+  background: linear-gradient(var(--paper-2), color-mix(in srgb, var(--paper-2) 0%, transparent))
 }
 @media (max-width: 600px) {
   .section-head--pin {
